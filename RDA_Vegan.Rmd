@@ -161,10 +161,12 @@ Filtered_D18O_Fauna <- D18O %>%
 # Here I am filtering for Neolithic only, to exclude variability that might be due to larger climatic patterns at the early Holocene
       filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
   select(-chronology)
+
+
+
 ```
 ###############################
 DONT NEED TO CHANGE ANYTHING UP TO HERE 
-(To load a specific tibble, use the `readRDS` function, replacing 'file_name' with the desired file: Joined_D18O_Bot <- readRDS("Joined_D18O_Bot.rds")
 ##############################
 
 RDA analysis will tell you whether and if yes how the variability (inertia) of the faunal or botanical data is correlated with or explained by the environmental data. You can then play around with the environmental factors using the equations or you can pick out the most important ones when running all factors and show in more detail how they relate to the faunal and botanical species using the scatterplots and correlation tests (R,R2 and p). 
