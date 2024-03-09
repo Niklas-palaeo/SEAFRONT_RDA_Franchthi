@@ -1,0 +1,465 @@
+---
+title: "RDA Analysis Method"
+author: "Niklas Hausmann"
+date: "Today"
+output: pdf_document
+---
+
+# Libraries 
+```{r Libraries,echo=FALSE,message = FALSE,warning = FALSE}
+knitr::opts_chunk$set(echo=FALSE,message = FALSE,warning = FALSE)
+
+{
+  pacman::p_load(
+    here,
+    janitor,
+    tidyverse,ggpubr,broom,
+    cowplot,ggx,vegan,
+    patchwork,
+    RColorBrewer) 
+  
+  theme_set(theme_cowplot())
+  chron_colours <- c("#7D3C98","#9B30FF",  "darkgreen", "#74C365", "#FF8C00","#FFD700")
+  
+  }
+```
+
+# Data
+## D18O
+```{r}
+D18O <- readxl::read_excel(here("data","arch_std_error.xls"), sheet = "Sheet1") %>% 
+  as_tibble() %>% 
+  clean_names() %>% 
+  select(4,6:11,chronology) %>% 
+  mutate(chronology=fct_relevel(chronology, c("FP","LM","UM","FM","FM/IN","IN","EN","EN-MN","MN","LN","FN"))) %>% 
+  unite("trenchunit",trench,unit,sep="_") %>% 
+  mutate(temp = 16.9-4.38*(d18o)+0.1*(d18o)*(d18o)) %>% 
+  group_by(trenchunit,chronology) %>% 
+  summarise(min=min(temp,na.rm = TRUE),
+         max=max(temp,na.rm = TRUE),
+         range=max-min,
+         sd=sd(temp,na.rm = TRUE),
+         se = sd(temp,na.rm = TRUE) / sqrt(n())
+         ) %>% 
+  ungroup() %>%
+  arrange(trenchunit)
+
+
+D18O_WSr <- readxl::read_excel(here("data","arch_std_error.xls"), sheet = "Sheet1") %>% 
+  as_tibble() %>% 
+  clean_names() %>% 
+  select(4,6:11,chronology) %>% 
+  unite("trenchunit",trench,unit,sep="_") %>%
+  mutate(temp = 16.9-4.38*(d18o)+0.1*(d18o)*(d18o)) %>% 
+  group_by(trenchunit,season) %>% 
+  summarise(range=max(temp,na.rm = TRUE)-min(temp,na.rm = TRUE),
+             se = sd(temp,na.rm = TRUE) / sqrt(n())
+             ) %>% 
+  ungroup() %>% 
+  arrange(trenchunit) %>% 
+  na.omit() %>% 
+  pivot_wider(names_from = "season",values_from = c("range","se")) #%>% 
+  #na.omit() # this deletes a lot of otherwise good data. it won't work with CCA and RDA with NAs but it will with the Scatterplots
+  
+
+```
+
+
+## Fauna
+```{r}
+Fauna_FAN <- read.csv(here("data","Fauna_FAN_grouped_NISP.csv"),colClasses = c(unit="character")) %>% 
+  clean_names() %>%
+  mutate(trench="FAN")
+
+Fauna_FAS <- read.csv(here("data","Fauna_FAS_grouped_NISP.csv"),colClasses = c(unit="character")) %>% 
+  clean_names() %>% 
+  mutate(trench="FAS")
+
+Molluscs <- read.csv(here("data","Mollusc_data.csv"),colClasses = c(unit="character")) %>% 
+  clean_names() %>% 
+  unite("trenchunit",trench,unit,sep="_")
+
+
+
+
+Fauna <- bind_rows(Fauna_FAN,Fauna_FAS) %>% 
+  unite("trenchunit",trench,unit,sep="_") %>% 
+  mutate(across(everything(), ~replace_na(.x, 0))) %>% 
+  filter(if_any(where(is.numeric), ~ .x > 0)) %>% #remove empty rows
+  arrange(trenchunit) %>% 
+  left_join(Molluscs %>% rename(molluscs=nisp) %>% select(molluscs,trenchunit),by = "trenchunit")
+
+rm(Fauna_FAN,Fauna_FAS,Molluscs)
+```
+
+## Botanical
+```{r}
+Bot <- read.csv(here("data","Botanical_data.csv")) %>% 
+  select(-Column) %>% 
+  filter(trench=="FAS"|trench=="FAN") %>% 
+  unite("trenchunit",trench,unit,sep="_") %>% 
+  arrange(trenchunit) %>% 
+  mutate(zone = factor(zone,
+                      levels = c("Ia",
+                                 "Ib",
+                                 "I/II",
+                                 "I/III",
+                                 "II",
+                                 "II/III",
+                                 "III",
+                                 "IV",
+                                 "IV/V",
+                                 "V",
+                                 "V/VI",
+                                 "VI",
+                                 "VI/VII",
+                                 "VII",
+                                 "VIIa",
+                                 "VIIb"
+                                 )
+                    )
+         ) %>% 
+    replace_na(list(NISP=0)) %>% 
+    pivot_wider(names_from = "species",values_from = "NISP",values_fn = {sum}) %>%  # at this step fragments and complete are summed
+    select_if(~any(. != 0)) %>% #Removing rows and columns that are all 0s
+  rowwise() %>% 
+  filter(any(c_across(where(is.numeric)) != 0)) %>%
+  ungroup() %>% 
+  left_join(D18O %>% select(trenchunit,chronology),by="trenchunit") %>% 
+  filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN")
+```
+
+# Faunal analysis
+### Filtered Fauna
+```{r}
+Filtered_Fauna <- Fauna %>%
+  filter(trenchunit %in% D18O$trenchunit) %>%
+  arrange(trenchunit) %>%
+  filter(trenchunit!="FAN_123") %>%  # that one has only one isotope sample causing NAs
+  # filter(trenchunit!="FAN_174") %>%  # that one has only onesummer isotope samples
+  column_to_rownames("trenchunit") %>% 
+  mutate(across(everything(), ~(.x - min(.x, na.rm = TRUE)) / 
+                                  (max(.x, na.rm = TRUE) - min(.x, na.rm = TRUE))))
+
+Filtered_D18O_Fauna <- D18O %>% 
+  filter(trenchunit %in% Fauna$trenchunit) %>%
+  mutate(
+   Winter_Temp = min,#16.9-4.38*(min)+0.1*(min)*(min),
+    Summer_Temp = max, #16.9-4.38*(max)+0.1*(max)*(max),
+    range=Summer_Temp  - Winter_Temp,
+    # Summer_Temp = (min - min(min, na.rm = TRUE)) / (max(min, na.rm = TRUE) - min(min, na.rm = TRUE)),
+    # Winter_Temp = (max - min(max, na.rm = TRUE)) / (max(max, na.rm = TRUE) - min(max, na.rm = TRUE)),
+  # sd = (sd - min(sd, na.rm = TRUE)) / (max(sd, na.rm = TRUE) - min(sd, na.rm = TRUE)),
+    # se = (se - min(se, na.rm = TRUE)) / (max(se, na.rm = TRUE) - min(se, na.rm = TRUE)),
+    # range_normalized = (range - min(range, na.rm = TRUE)) / (max(range, na.rm = TRUE) - min(range, na.rm = TRUE))
+        ) %>% 
+  select(-min,-max, -sd) %>% 
+  arrange(trenchunit) %>%
+  filter(trenchunit!="FAN_123") %>%  # that one has only one isotope sample causing NAs
+  # filter(trenchunit!="FAN_174") %>%  # that one has only one isotope sample causing NAs
+  column_to_rownames("trenchunit") %>% 
+# Here I am filtering for Neolithic only, to exclude variability that might be due to larger climatic patterns at the early Holocene
+      filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
+  select(-chronology)
+```
+###############################
+DONT NEED TO CHANGE ANYTHING UP TO HERE 
+(To load a specific tibble, use the `readRDS` function, replacing 'file_name' with the desired file: Joined_D18O_Bot <- readRDS("Joined_D18O_Bot.rds")
+##############################
+
+RDA analysis will tell you whether and if yes how the variability (inertia) of the faunal or botanical data is correlated with or explained by the environmental data. You can then play around with the environmental factors using the equations or you can pick out the most important ones when running all factors and show in more detail how they relate to the faunal and botanical species using the scatterplots and correlation tests (R,R2 and p). 
+Using ths CorrsFauna or CorrsBot dataframe you can look at what species are mostly affected by environmental change and also highlight those using scatterplots.
+
+This should give you enough to discuss the impact of climatic variability or temperature extremes onto human subsistence at Franchthi.
+
+## CCA - not as applicable as RDA as we have quantifiable environmental data
+```{r}
+# Now apply the cca function
+All_CCA <- cca(Filtered_Fauna,Filtered_D18O_Fauna)
+All_CCA
+plot(All_CCA)
+
+MinMax_CCA <- cca(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
+MinMax_CCA
+plot(MinMax_CCA)
+```
+
+## RDA
+```{r}
+All_RDA <- rda(Filtered_Fauna,Filtered_D18O_Fauna)
+All_RDA
+plot(All_RDA)
+
+
+MinMax_RDA <- rda(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
+MinMax_RDA
+plot(MinMax_RDA)
+
+SummerSE_RDA <- rda(Filtered_Fauna ~ se + Summer_Temp, data=Filtered_D18O_Fauna)
+SummerSE_RDA
+plot(SummerSE_RDA)
+
+WinterSE_RDA <- rda(Filtered_Fauna ~ se + Winter_Temp, data=Filtered_D18O_Fauna)
+WinterSE_RDA
+plot(WinterSE_RDA)
+
+```
+
+
+# Botanical analysis
+## Filtering Bot Data
+```{r}
+Filtered_Bot <- Bot %>% 
+ filter(trenchunit %in% D18O$trenchunit) %>% 
+  filter(trenchunit!="FAN_123") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAN_174") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAS_128") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAN_127") %>%  # that one has only one summer isotope samples
+  column_to_rownames("trenchunit") %>% 
+  select(-zone,-total_flot,-chronology) %>%
+  mutate(across(-liters, ~./liters)) %>%  # this divides the remains by volume of the sample
+  select(-liters) %>% 
+  mutate(across(everything(), ~ if (all(is.na(.x))) NA else {  # this normalises the data to be more comparable
+    min_val <- min(.x, na.rm = TRUE)
+    max_val <- max(.x, na.rm = TRUE)
+    if (min_val == max_val) 0 else (.x - min_val) / (max_val - min_val)
+  })) %>% 
+    select(where(~!all(unique(.) %in% c(0, 1))))  # This selects columns that don't have only 0 and 1 as their unique values
+
+
+Filtered_D18O_Bot <- D18O %>% 
+  filter(trenchunit %in% Bot$trenchunit) %>%
+  mutate(
+    Summer_Temp = 16.9-4.38*(min)+0.1*(min)*(min),
+    Winter_Temp = 16.9-4.38*(max)+0.1*(max)*(max),
+    range=Summer_Temp  - Winter_Temp,
+    # Summer_Temp = (min - min(min, na.rm = TRUE)) / (max(min, na.rm = TRUE) - min(min, na.rm = TRUE)),
+    # Winter_Temp = (max - min(max, na.rm = TRUE)) / (max(max, na.rm = TRUE) - min(max, na.rm = TRUE)),
+  # sd = (sd - min(sd, na.rm = TRUE)) / (max(sd, na.rm = TRUE) - min(sd, na.rm = TRUE)),
+    # se = (se - min(se, na.rm = TRUE)) / (max(se, na.rm = TRUE) - min(se, na.rm = TRUE)),
+    # range_normalized = (range - min(range, na.rm = TRUE)) / (max(range, na.rm = TRUE) - min(range, na.rm = TRUE))
+        ) %>% 
+  select(-min,-max, -sd) %>% 
+  arrange(trenchunit) %>%
+  filter(trenchunit!="FAN_123") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAN_174") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAS_128") %>%  # that one has only one isotope sample causing NAs
+  filter(trenchunit!="FAN_127") %>%  # that one has only one summer isotope samples
+  column_to_rownames("trenchunit") %>% 
+  select(-chronology)
+
+
+```
+
+
+## CCA - not as applicable as RDA as we have quantifiable environmental data
+```{r}
+# Now apply the cca function
+All_CCA <- cca(Filtered_Bot,Filtered_D18O_Bot)
+All_CCA
+plot(All_CCA)
+
+MinMax_CCA <- cca(Filtered_Bot ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Bot)
+MinMax_CCA
+plot(MinMax_CCA)
+```
+
+## RDA
+```{r}
+All_RDA <- rda(Filtered_Bot,Filtered_D18O_Bot)
+All_RDA
+plot(All_RDA)
+
+
+MinMax_RDA <- rda(Filtered_Bot ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Bot)
+MinMax_RDA
+plot(MinMax_RDA)
+
+SummerSE_RDA <- rda(Filtered_Bot ~ se + Summer_Temp, data=Filtered_D18O_Bot)
+SummerSE_RDA
+plot(SummerSE_RDA)
+
+WinterSE_RDA <- rda(Filtered_Bot ~ se + Winter_Temp, data=Filtered_D18O_Bot)
+WinterSE_RDA
+plot(WinterSE_RDA)
+
+
+```
+
+
+# Scatterplots
+## Fauna
+### Fauna Data wrangle
+```{r}
+Joined_D18O_Fauna <- cbind(Filtered_D18O_Fauna,Filtered_Fauna) %>% 
+  mutate(trenchunit=rownames(.)) %>% 
+  left_join(D18O_WSr,by="trenchunit") %>% #adding the incomplete seasonal data
+  select(trenchunit,range_Summer,range_Winter,se_Summer,se_Winter,everything()) %>%
+  pivot_longer(names_to = "species", values_to = "nisp",cols = 10:26) %>%  
+  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
+  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+  
+```
+
+
+### Fauna Correlations
+```{r}
+# Split data by species and environmental data to perform correlations
+Corrs_Fauna <- Joined_D18O_Fauna %>% 
+  group_by(species, env_data) %>%
+  nest() %>%
+  mutate(correlation = map(data, ~ tryCatch({
+    cor.test(.x$nisp, .x$env_values, method = "pearson")
+  }, error = function(e) NULL))) %>%
+  # Correctly filter out NULL results outside of mutate
+  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
+  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
+  select(-data, -correlation) %>%
+  unnest(tidy_cor) %>%
+  mutate(species_env = paste(species, env_data, sep = "_vs_"),
+         r.squared = estimate^2) %>%
+  select(species_env, estimate, p.value, r.squared) # This makes many warning but it's ok. Lots of NAs are being created, that's why.
+
+```
+
+### Fauna Plots
+Based on the Corrs_Fauna data you can see which species are most correlated to which environmental proxies. Just change the name in the second line.
+Based on the RDA data you can see which environmental factors might be most important.
+
+
+#### By Environmental data
+```{r}
+Joined_D18O_Fauna %>% 
+  filter(env_data=="range") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+    geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Winter Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
+Joined_D18O_Fauna %>% 
+  filter(env_data=="Summer_Temp") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Summer Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
+Joined_D18O_Fauna %>% 
+  filter(env_data=="range") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Temp Range", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+```
+
+
+#### By Animal
+```{r}
+Joined_D18O_Fauna %>% 
+  filter(species=="sus_scrofa") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
+  geom_point(aes(col=chronology))+
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+  scale_color_manual(values = chron_colours) + 
+  labs(title="Medium ungulate", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~env_data,scales = "free")
+
+
+```
+
+## Botany 
+### Botany Data wrangle
+```{r}
+Joined_D18O_Bot <- cbind(Filtered_D18O_Bot,Filtered_Bot) %>% 
+  mutate(trenchunit=rownames(.)) %>% 
+  pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%  
+  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 1:4) %>% 
+  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+```
+
+### Botany Correlations
+```{r}
+# Split data by species and environmental data to perform correlations. LOTS OF WARNINGS BUT OK
+Corrs_Bot <- Joined_D18O_Bot %>%
+    filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
+  group_by(species, env_data) %>%
+  nest() %>%
+  mutate(correlation = map(data, ~ tryCatch({
+    cor.test(.x$nisp, .x$env_values, method = "pearson")
+  }, error = function(e) NULL))) %>% # This makes many warning but it's ok. Lots of NAs are being created, that's why.
+  # Correctly filter out NULL results outside of mutate
+  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
+  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
+  select(-data, -correlation) %>%
+  unnest(tidy_cor) %>%
+  mutate(species_env = paste(species, env_data, sep = "_vs_"),
+         r.squared = estimate^2) %>%
+  select(species_env, estimate, p.value, r.squared) 
+
+```
+
+### Botany Plots
+Based on the Corrs_Bot data you can see which species are most correlated to which environmental proxies. Just change the name in the second line.
+Based on the RDA data you can see which environmental factors might be most important.
+
+#### By Environmental data
+```{r}
+Joined_D18O_Bot %>% 
+  filter(env_data=="Winter_Temp") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  # scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Winter Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
+Joined_D18O_Bot %>% 
+  filter(env_data=="Summer_Temp") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Summer Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
+Joined_D18O_Bot %>% 
+  filter(env_data=="range") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Temp Range", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+```
+
+
+
+#### By Plant
+```{r}
+Joined_D18O_Bot %>% 
+  filter(species=="alkanna_sp") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
+  geom_point(aes(col=chronology))+
+  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+  scale_color_manual(values = chron_colours) +
+  labs(title="Hordeum sp.", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~env_data,scales = "free")
+
+
+```
