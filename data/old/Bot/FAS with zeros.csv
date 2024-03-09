@@ -1,0 +1,1224 @@
+Row,Unit,Zone,Liters,Tot_Flot_g,Sort_Flot_pc,species,complete,Frags.,species_group
+1,59,0,0,0,0,Leguminosae,2,0,Leguminosae
+2,61,0,0,0,0,Alkanna sp.,1,0,Alkanna sp.
+3,64,0,0,0,0,Leguminosae,1,0,Leguminosae
+4,64,0,0,0,0,Gramineae indet.,1,0,Gramineae indet.
+5,66,0,0,0,0,Leguminosae,1,0,Leguminosae
+6,66,0,0,0,0,Gramineae indet.,1,0,Gramineae indet.
+7,67,0,0,0,0,Leguminosae,1,0,Leguminosae
+8,67,0,0,0,0,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+9,69,0,0,0,0,Leguminosae,2,0,Leguminosae
+10,69,0,0,0,0,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+11,69,0,0,0,0,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+12,71,0,0,0,0,Lithospermum arvense,1,0,Lithospermum
+13,71,0,0,0,0,Alkanna sp.,1,0,Alkanna sp.
+14,73,VII,272,102.7,100,Polygonum sp.,1,0,Polygonatum
+15,73,VII,272,102.7,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+16,73,VII,272,102.7,100,Medicago sp.,1,0,Medicago sp.
+17,73,VII,272,102.7,100,Prunus amygdalus,1,0,Prunus amygdalus
+18,73,VII,272,102.7,100,Lithospermum arvense,1,0,Lithospermum
+19,73,VII,272,102.7,100,Alkanna sp.,6,0,Alkanna sp.
+20,73,VII,272,102.7,100,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+21,73,VII,272,102.7,100,Hordeum vulgare ssp.,13,0,Hordeum vulgare
+22,73,VII,272,102.7,100,spikelet fork,1,0,spikelet fork
+23,73,VII,272,102.7,100,glume base indet.,3,0,glume base indet.
+24,73,VII,272,102.7,100,Gramineae indet.,0,39,Gramineae indet.
+25,74,VII,257,128.8,100,Cruciferae sp.,1,0,Cruciferae sp.
+26,74,VII,257,128.8,100,Lens sp.,3,0,Lens sp.
+27,74,VII,257,128.8,100,Medicago sp.,7,0,Medicago sp.
+28,74,VII,257,128.8,100,Prunus amygdalus,0,1,Prunus amygdalus
+29,74,VII,257,128.8,100,Triticum turgidum ssp. dicoccum,6,0,Tritirum
+30,74,VII,257,128.8,100,Hordeum vulgare ssp.,9,10,Hordeum vulgare
+31,74,VII,257,128.8,100,Gramineae indet.,0,51,Gramineae indet.
+32,75,VII,45,106.4,100,Cruciferae sp.,2,0,Cruciferae sp.
+33,75,VII,45,106.4,100,Medicago sp.,2,0,Medicago sp.
+34,75,VII,45,106.4,100,Prunus amygdalus,0,4,Prunus amygdalus
+35,75,VII,45,106.4,100,Lithospermum arvense,1,0,Lithospermum
+36,75,VII,45,106.4,100,Triticum turgidum ssp. dicoccum,6,0,Tritirum
+37,75,VII,45,106.4,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+38,75,VII,45,106.4,100,glume base indet.,0,0,glume base indet.
+39,75,VII,45,106.4,100,culm node indet.,0,0,culm node
+40,75,VII,45,106.4,100,Gramineae indet.,0,36,Gramineae indet.
+41,76,VII,129,801.2,39,Lens sp. Prunus amygdalus,2,6,Lens sp. Prunus amygdalus
+42,76,VII,129,801.2,39,Lithospermum arvense,1,0,Lithospermum
+43,76,VII,129,801.2,39,Triticum turgidum ssp. dicoccum,17,3,Tritirum
+44,76,VII,129,801.2,39,Hordeum vulgare ssp.,5,3,Hordeum vulgare
+45,76,VII,129,801.2,39,glume base indet.,0,0,glume base indet.
+46,76,VII,129,801.2,39,culm node indet.,0,0,culm node
+47,76,VII,129,801.2,39,Gramineae indet.,0,44,Gramineae indet.
+48,77,VII,62,89.5,100,Vitis vinifera ssp. sylvestris,1,0,Vitis vinifera ssp. sylvestris
+49,77,VII,62,89.5,100,Lens sp.,2,0,Lens sp.
+50,77,VII,62,89.5,100,Leguminosae,2,0,Leguminosae
+51,77,VII,62,89.5,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+52,77,VII,62,89.5,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+53,77,VII,62,89.5,100,Gramineae indet.,0,21,Gramineae indet.
+54,78,VII,58,73,100,Polygonum sp.,1,0,Polygonatum
+55,78,VII,58,73,100,Pistacia cf. lentiscus,0,6,Pistacia cf. lentiscus
+56,78,VII,58,73,100,Lens sp.,3,0,Lens sp.
+57,78,VII,58,73,100,Lathyrus sp.,1,0,Lathyrus sp.
+58,78,VII,58,73,100,Medicago sp.,3,0,Medicago sp.
+59,78,VII,58,73,100,Leguminosae,1,0,Leguminosae
+60,78,VII,58,73,100,Prunus amygdalus,0,1,Prunus amygdalus
+61,78,VII,58,73,100,Lithospermum arvense,4,0,Lithospermum
+62,78,VII,58,73,100,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+63,78,VII,58,73,100,Hordeum vulgare ssp.,3,1,Hordeum vulgare
+64,78,VII,58,73,100,Gramineae indet.,0,42,Gramineae indet.
+65,79,VII,54,91.6,100,Cruciferae sp.,1,0,Cruciferae sp.
+66,79,VII,54,91.6,100,Lens sp.,5,0,Lens sp.
+67,79,VII,54,91.6,100,Medicago sp.,3,0,Medicago sp.
+68,79,VII,54,91.6,100,Leguminosae,6,0,Leguminosae
+69,79,VII,54,91.6,100,Prunus amygdalus,1,0,Prunus amygdalus
+70,79,VII,54,91.6,100,Lithospermum arvense,1,0,Lithospermum
+71,79,VII,54,91.6,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+72,79,VII,54,91.6,100,Hordeum vulgare ssp.,4,3,Hordeum vulgare
+73,79,VII,54,91.6,100,Gramineae indet.,0,34,Gramineae indet.
+74,80,VII,30,21.2,100,Lathyrus sp.,1,0,Lathyrus sp.
+75,80,VII,30,21.2,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+76,80,VII,30,21.2,100,Gramineae indet.,0,11,Gramineae indet.
+77,81,VII,98,411.1,56,Lens sp.,3,0,Lens sp.
+78,81,VII,98,411.1,56,Medicago sp.,3,0,Medicago sp.
+79,81,VII,98,411.1,56,Leguminosae,1,0,Leguminosae
+80,81,VII,98,411.1,56,Leguminosae,2,0,Leguminosae
+81,81,VII,98,411.1,56,Prunus amygdalus,0,3,Prunus amygdalus
+82,81,VII,98,411.1,56,Lithospermum arvense,1,0,Lithospermum
+83,81,VII,98,411.1,56,Triticum turgidum ssp. dicoccum,7,0,Tritirum
+84,81,VII,98,411.1,56,Hordeum vulgare ssp.,4,4,Hordeum vulgare
+85,81,VII,98,411.1,56,Gramineae indet.,0,37,Gramineae indet.
+86,82,VII,220,222.8,100,Cruciferae sp.,20,0,Cruciferae sp.
+87,82,VII,220,222.8,100,Astragalus!frigonella sp.,1,0,Astragalus frigonella sp.
+88,82,VII,220,222.8,100,Lathyrus sp.,1,0,Lathyrus sp.
+89,82,VII,220,222.8,100,Lens sp.,2,0,Lens sp.
+90,82,VII,220,222.8,100,Medicago sp.,455,0,Medicago sp.
+91,82,VII,220,222.8,100,Leguminosae,2,0,Leguminosae
+92,82,VII,220,222.8,100,Prunus amygdalus,0,3,Prunus amygdalus
+93,82,VII,220,222.8,100,Coriandrum sp.,1,0,Coriandrum sp.
+94,82,VII,220,222.8,100,Lithospermum arvense,27,0,Lithospermum
+95,82,VII,220,222.8,100,Echium sp.,6,0,Echium sp.
+96,82,VII,220,222.8,100,Boraginaceae sp.,2,0,Boraginaceae sp.
+97,82,VII,220,222.8,100,Triticum turgidum ssp. dicoccum,3,1,Tritirum
+98,82,VII,220,222.8,100,Hordeum vulgare ssp.,9,0,Hordeum vulgare
+99,82,VII,220,222.8,100,Gramineae indet.,0,87,Gramineae indet.
+100,82,VII,220,222.8,100,seed indet.,3,0,seed indet.
+101,83,VII,37,401,56,Cruciferae sp.,3,0,Cruciferae sp.
+102,83,VII,37,401,56,Pistacia cf. lentiscus,1,2,Pistacia cf. lentiscus
+103,83,VII,37,401,56,Lens sp.,1,0,Lens sp.
+104,83,VII,37,401,56,Medicago sp.,44,0,Medicago sp.
+105,83,VII,37,401,56,Leguminosae,1,0,Leguminosae
+106,83,VII,37,401,56,Prunus amygdalus,1,0,Prunus amygdalus
+107,83,VII,37,401,56,Lithospermum arvense,1,0,Lithospermum
+108,83,VII,37,401,56,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+109,83,VII,37,401,56,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+110,83,VII,37,401,56,Hordeum vulgare ssp.,3,2,Hordeum vulgare
+111,83,VII,37,401,56,Gramineae indet.,0,47,Gramineae indet.
+112,84,VII,43,439.3,57,Leguminosae,0,4,Leguminosae
+113,84,VII,43,439.3,57,Prunus amygdalus,1,0,Prunus amygdalus
+114,84,VII,43,439.3,57,Lithospermum arvense,2,0,Lithospermum
+115,84,VII,43,439.3,57,Triticum turgidum ssp. dicoccum,1,1,Tritirum
+116,84,VII,43,439.3,57,Hordeum vulgare ssp.,3,4,Hordeum vulgare
+117,85,VII,56,216.1,100,Cruciferae sp.,7,0,Cruciferae sp.
+118,85,VII,56,216.1,100,Vitis vinifera ssp. sylvestris,2,0,Vitis vinifera ssp. sylvestris
+119,85,VII,56,216.1,100,Pistacia cf. lentiscus,0,4,Pistacia cf. lentiscus
+120,85,VII,56,216.1,100,Lens sp.,4,0,Lens sp.
+121,85,VII,56,216.1,100,Lathyrus sp.,3,0,Lathyrus sp.
+122,85,VII,56,216.1,100,Medicago sp.,104,0,Medicago sp.
+123,85,VII,56,216.1,100,Leguminosae,1,0,Leguminosae
+124,85,VII,56,216.1,100,Leguminosae,1,0,Leguminosae
+125,85,VII,56,216.1,100,Prunus amygdalus,2,0,Prunus amygdalus
+126,85,VII,56,216.1,100,Lithospermum arvense,2,0,Lithospermum
+127,85,VII,56,216.1,100,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+128,85,VII,56,216.1,100,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+129,85,VII,56,216.1,100,glume base indet.,1,0,glume base indet.
+130,85,VII,56,216.1,100,culm node indet.,1,0,culm node
+131,85,VII,56,216.1,100,Gramineae indet.,0,40,Gramineae indet.
+132,85,VII,56,216.1,100,seed indet.,0,2,seed indet.
+133,86,VII,99,276.3,55,Pistacia cf. lentiscus,1,26,Pistacia cf. lentiscus
+134,86,VII,99,276.3,55,Lens sp.,3,0,Lens sp.
+135,86,VII,99,276.3,55,Medicago sp.,4,0,Medicago sp.
+136,86,VII,99,276.3,55,Leguminosae,1,0,Leguminosae
+137,86,VII,99,276.3,55,Prunus amygdalus,2,0,Prunus amygdalus
+138,86,VII,99,276.3,55,Pyrus amygdaliformis,3,0,Pyrus amygdaliformis
+139,86,VII,99,276.3,55,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+140,86,VII,99,276.3,55,Hordeum vulgare ssp.,10,6,Hordeum vulgare
+141,86,VII,99,276.3,55,spikelet fork,4,0,spikelet fork
+142,86,VII,99,276.3,55,Gramineae indet.,0,64,Gramineae indet.
+143,87,VII,31,69.6,100,Pistacia cf. lentiscus,5,0,Pistacia cf. lentiscus
+144,87,VII,31,69.6,100,Lens sp.,3,0,Lens sp.
+145,87,VII,31,69.6,100,Medicago sp.,5,0,Medicago sp.
+146,87,VII,31,69.6,100,Prunus amygdalus,3,0,Prunus amygdalus
+147,87,VII,31,69.6,100,Pyrus amygdaliformis,0,3,Pyrus amygdaliformis
+148,87,VII,31,69.6,100,Lithospermum arvense,3,0,Lithospermum
+149,87,VII,31,69.6,100,Echium sp.,1,0,Echium sp.
+150,87,VII,31,69.6,100,Hordeum vulgare ssp.,1,3,Hordeum vulgare
+151,87,VII,31,69.6,100,spikelet fork,0,0,spikelet fork
+152,87,VII,31,69.6,100,Gramineae indet.,0,20,Gramineae indet.
+153,88,VII,14,61.5,100,Pistacia cf. lentiscus,2,6,Pistacia cf. lentiscus
+154,88,VII,14,61.5,100,Medicago sp.,10,0,Medicago sp.
+155,88,VII,14,61.5,100,Lithospermum arvense,1,0,Lithospermum
+156,88,VII,14,61.5,100,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+157,88,VII,14,61.5,100,Hordeum vulgare ssp.,3,1,Hordeum vulgare
+158,88,VII,14,61.5,100,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+159,88,VII,14,61.5,100,culm node indet.,1,0,culm node
+160,88,VII,14,61.5,100,Gramineae indet.,0,19,Gramineae indet.
+161,89,VII,183,464.8,22,Pistacia cf. lentiscus,2,0,Pistacia cf. lentiscus
+162,89,VII,183,464.8,22,Lens sp.,6,0,Lens sp.
+163,89,VII,183,464.8,22,Lathyrus sp.,3,0,Lathyrus sp.
+164,89,VII,183,464.8,22,Medicago sp.,8,0,Medicago sp.
+165,89,VII,183,464.8,22,Prunus amygdalus,5,0,Prunus amygdalus
+166,89,VII,183,464.8,22,Lithospermum arvense,1,0,Lithospermum
+167,89,VII,183,464.8,22,Triticum turgidum ssp. dicoccum,9,0,Tritirum
+168,89,VII,183,464.8,22,Hordeum vulgare ssp.,5,3,Hordeum vulgare
+169,89,VII,183,464.8,22,spikelet fork,2,0,spikelet fork
+170,89,VII,183,464.8,22,Gramineae indet.,0,62,Gramineae indet.
+171,90,VII,86,937.9,31,Lens sp.,2,0,Lens sp.
+172,90,VII,86,937.9,31,Medicago sp.,9,0,Medicago sp.
+173,90,VII,86,937.9,31,Leguminosae,3,0,Leguminosae
+174,90,VII,86,937.9,31,Prunus amygdalus,4,0,Prunus amygdalus
+175,90,VII,86,937.9,31,Lithospermum arvense,4,0,Lithospermum
+176,90,VII,86,937.9,31,Triticum turgidum ssp. dicoccum,5,1,Tritirum
+177,90,VII,86,937.9,31,Hordeum vulgare ssp.,7,6,Hordeum vulgare
+178,90,VII,86,937.9,31,glume base indet.,3,0,glume base indet.
+179,90,VII,86,937.9,31,Gramineae indet.,0,42,Gramineae indet.
+180,91,VII,60,862,30,Cruciferae sp.,0,0,Cruciferae sp.
+181,91,VII,60,862,30,Pistacia cf. lentiscus,0,3,Pistacia cf. lentiscus
+182,91,VII,60,862,30,Lens sp.,1,0,Lens sp.
+183,91,VII,60,862,30,Medicago sp.,4,0,Medicago sp.
+184,91,VII,60,862,30,Prunus amygdalus,2,0,Prunus amygdalus
+185,91,VII,60,862,30,Triticum monococcum,3,0,Tritirum
+186,91,VII,60,862,30,Triticum monococcum,2,0,Tritirum
+187,91,VII,60,862,30,Triticum turgidum ssp. dicoccum,12,2,Tritirum
+188,91,VII,60,862,30,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+189,91,VII,60,862,30,0,9,14,0
+190,91,VII,60,862,30,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+191,91,VII,60,862,30,spikelet fork,3,0,spikelet fork
+192,91,VII,60,862,30,glume base indet.,8,0,glume base indet.
+193,91,VII,60,862,30,Gramineae indet.,0,62,Gramineae indet.
+194,91,VII,60,862,30,seed indet.,0,2,seed indet.
+195,92,VII,7,80.5,100,Pistacia cf. lentiscus,0,2,Pistacia cf. lentiscus
+196,92,VII,7,80.5,100,Prunus amygdalus,1,0,Prunus amygdalus
+197,92,VII,7,80.5,100,Lithospermum arvense,1,0,Lithospermum
+198,92,VII,7,80.5,100,Hordeum vulgare ssp.,2,5,Hordeum vulgare
+199,92,VII,7,80.5,100,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+200,92,VII,7,80.5,100,culm node indet.,0,0,culm node
+201,92,VII,7,80.5,100,Gramineae indet.,0,11,Gramineae indet.
+202,92,VII,7,80.5,100,seed indet.,0,1,seed indet.
+203,93,VII,109,345.2,46,Pistacia cf. lentiscus,0,2,Pistacia cf. lentiscus
+204,93,VII,109,345.2,46,Lens sp.,2,0,Lens sp.
+205,93,VII,109,345.2,46,Medicago sp.,7,0,Medicago sp.
+206,93,VII,109,345.2,46,Prunus amygdalus,1,0,Prunus amygdalus
+207,93,VII,109,345.2,46,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+208,93,VII,109,345.2,46,Gramineae indet.,0,36,Gramineae indet.
+209,94,VII,89,176.3,51,Cruciferae sp.,0,0,Cruciferae sp.
+210,94,VII,89,176.3,51,Pistacia cf. lentiscus,0,3,Pistacia cf. lentiscus
+211,94,VII,89,176.3,51,Lens sp.,0,0,Lens sp.
+212,94,VII,89,176.3,51,Prunus amygdalus,0,6,Prunus amygdalus
+213,94,VII,89,176.3,51,Hordeum vulgare ssp.,4,8,Hordeum vulgare
+214,95,VII,34,39.4,100,Pistacia cf. lentiscus,0,2,Pistacia cf. lentiscus
+215,95,VII,34,39.4,100,Vicia ervilia,1,0,Vicia
+216,95,VII,34,39.4,100,Lens sp.,1,0,Lens sp.
+217,95,VII,34,39.4,100,large Pisum sp.,1,0,large Pisum sp.
+218,95,VII,34,39.4,100,Medicago sp.,1,0,Medicago sp.
+219,95,VII,34,39.4,100,Leguminosae,3,0,Leguminosae
+220,95,VII,34,39.4,100,Prunus amygdalus,1,0,Prunus amygdalus
+221,95,VII,34,39.4,100,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+222,95,VII,34,39.4,100,Hordeum vulgare ssp.,0,0,Hordeum vulgare
+223,95,VII,34,39.4,100,seed indet.,0,2,seed indet.
+224,96,VII,27,69.7,100,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+225,96,VII,27,69.7,100,Lens sp.,1,0,Lens sp.
+226,96,VII,27,69.7,100,Prunus amygdalus,4,0,Prunus amygdalus
+227,96,VII,27,69.7,100,Lithospermum arvense,1,0,Lithospermum
+228,96,VII,27,69.7,100,Echium sp.,1,0,Echium sp.
+229,96,VII,27,69.7,100,Triticum turgidum ssp. dicoccum,5,0,Tritirum
+230,96,VII,27,69.7,100,Hordeum vulgare ssp.,11,18,Hordeum vulgare
+231,96,VII,27,69.7,100,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+232,96,VII,27,69.7,100,culm node indet.,1,0,culm node
+233,96,VII,27,69.7,100,Gramineae indet.,0,5,Gramineae indet.
+234,96,VII,27,69.7,100,seed indet.,0,2,seed indet.
+235,97,VII,35,22.2,100,Triticum turgidum ssp. dicoccum,0,0,Tritirum
+236,97,VII,35,22.2,100,Hordeum vulgare ssp.,0,2,Hordeum vulgare
+237,97,VII,35,22.2,100,culm node indet.,0,0,culm node
+238,98,VII,210,318.8,44,Fumaria sp.,2,0,Fumaria sp.
+239,98,VII,210,318.8,44,Cruciferae sp.,2,0,Cruciferae sp.
+240,98,VII,210,318.8,44,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+241,98,VII,210,318.8,44,Lens sp.,2,0,Lens sp.
+242,98,VII,210,318.8,44,Medicago sp.,11,0,Medicago sp.
+243,98,VII,210,318.8,44,Leguminosae,1,0,Leguminosae
+244,98,VII,210,318.8,44,Prunus amygdalus,5,0,Prunus amygdalus
+245,98,VII,210,318.8,44,Lithospermum arvense,3,0,Lithospermum
+246,98,VII,210,318.8,44,Liliaceae sp.,1,0,Liliaceae sp.
+247,98,VII,210,318.8,44,Triticum monococcum,2,0,Tritirum
+248,98,VII,210,318.8,44,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+249,98,VII,210,318.8,44,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+250,98,VII,210,318.8,44,spikelet fork,0,0,spikelet fork
+251,98,VII,210,318.8,44,Hordeum vulgare ssp.,10,6,Hordeum vulgare
+252,98,VII,210,318.8,44,Gramineae indet.,0,13,Gramineae indet.
+253,99,VII,74,428.2,24,Fumaria sp.,1,0,Fumaria sp.
+254,99,VII,74,428.2,24,Cruciferae sp.,1,0,Cruciferae sp.
+255,99,VII,74,428.2,24,Cruciferae sp.,1,0,Cruciferae sp.
+256,99,VII,74,428.2,24,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+257,99,VII,74,428.2,24,Lens sp.,6,0,Lens sp.
+258,99,VII,74,428.2,24,Lathyrus sp.,1,0,Lathyrus sp.
+259,99,VII,74,428.2,24,Medicago sp.,8,0,Medicago sp.
+260,99,VII,74,428.2,24,Prunus amygdalus,5,0,Prunus amygdalus
+261,99,VII,74,428.2,24,Triticum monococcum,4,0,Tritirum
+262,99,VII,74,428.2,24,Triticum turgidum ssp. dicoccum,5,0,Tritirum
+263,99,VII,74,428.2,24,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+264,99,VII,74,428.2,24,Hordeum vulgare ssp.,1,3,Hordeum vulgare
+265,99,VII,74,428.2,24,glume base indet.,3,0,glume base indet.
+266,99,VII,74,428.2,24,culm node indet.,2,0,culm node
+267,100,VII,30,135.3,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+268,100,VII,30,135.3,100,Lathyrus sp.,1,0,Lathyrus sp.
+269,100,VII,30,135.3,100,Lens sp.,14,0,Lens sp.
+270,100,VII,30,135.3,100,Lathyrus sp.,3,0,Lathyrus sp.
+271,100,VII,30,135.3,100,Medicago sp.,4,0,Medicago sp.
+272,100,VII,30,135.3,100,Leguminosae,5,0,Leguminosae
+273,100,VII,30,135.3,100,Prunus amygdalus,5,0,Prunus amygdalus
+274,100,VII,30,135.3,100,Triticum monococcum,5,0,Tritirum
+275,100,VII,30,135.3,100,Triticum monococcum,9,0,Tritirum
+276,100,VII,30,135.3,100,Triticum turgidum ssp. dicoccum,35,7,Tritirum
+277,100,VII,30,135.3,100,Hordeum vulgare ssp.,17,22,Hordeum vulgare
+278,100,VII,30,135.3,100,Gramineae indet.,0,44,Gramineae indet.
+279,101,VII,69,78,100,Cruciferae sp.,0,0,Cruciferae sp.
+280,101,VII,69,78,100,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+281,101,VII,69,78,100,Lens sp.,1,0,Lens sp.
+282,101,VII,69,78,100,Medicago sp.,4,0,Medicago sp.
+283,101,VII,69,78,100,Prunus amygdalus,2,0,Prunus amygdalus
+284,101,VII,69,78,100,Lithospermum arvense,1,0,Lithospermum
+285,101,VII,69,78,100,Teucrium sp.,1,0,Teucrium sp.
+286,101,VII,69,78,100,Triticum monococcum,1,0,Tritirum
+287,101,VII,69,78,100,Triticum turgidum ssp. dicoccum,4,1,Tritirum
+288,101,VII,69,78,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+289,101,VII,69,78,100,Hordeum vulgare ssp.,2,5,Hordeum vulgare
+290,101,VII,69,78,100,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+291,101,VII,69,78,100,spikelet fork,3,0,spikelet fork
+292,101,VII,69,78,100,Gramineae indet.,0,5,Gramineae indet.
+293,101,VII,69,78,100,seed indet.,0,2,seed indet.
+294,102,VII,89,165.6,100,Cruciferae sp.,6,0,Cruciferae sp.
+295,102,VII,89,165.6,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+296,102,VII,89,165.6,100,Lens sp.,8,0,Lens sp.
+297,102,VII,89,165.6,100,Lathyrus sp.,2,0,Lathyrus sp.
+298,102,VII,89,165.6,100,Medicago sp.,2,0,Medicago sp.
+299,102,VII,89,165.6,100,Prunus amygdalus,14,0,Prunus amygdalus
+300,102,VII,89,165.6,100,Triticum monococcum,1,0,Tritirum
+301,102,VII,89,165.6,100,Triticum monococcum,1,0,Tritirum
+302,102,VII,89,165.6,100,Triticum turgidum ssp. dicoccum,5,4,Tritirum
+303,102,VII,89,165.6,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+304,102,VII,89,165.6,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+305,102,VII,89,165.6,100,Hordeum vulgare ssp.,7,12,Hordeum vulgare
+306,102,VII,89,165.6,100,spikelet fork,2,0,spikelet fork
+307,102,VII,89,165.6,100,glume base indet.,4,0,glume base indet.
+308,102,VII,89,165.6,100,Gramineae indet.,0,11,Gramineae indet.
+309,102,VII,89,165.6,100,seed indet.,0,1,seed indet.
+310,103,VII,100,250.1,51,Cruciferae sp.,4,0,Cruciferae sp.
+311,103,VII,100,250.1,51,Pistacia cf. lentiscus,0,2,Pistacia cf. lentiscus
+312,103,VII,100,250.1,51,Lens sp.,4,0,Lens sp.
+313,103,VII,100,250.1,51,Lathyrus sp.,1,0,Lathyrus sp.
+314,103,VII,100,250.1,51,Medicago sp.,13,0,Medicago sp.
+315,103,VII,100,250.1,51,Prunus amygdalus,4,0,Prunus amygdalus
+316,103,VII,100,250.1,51,Pyrus amygdaliformis,3,0,Pyrus amygdaliformis
+317,103,VII,100,250.1,51,Lithospermum arvense,1,0,Lithospermum
+318,103,VII,100,250.1,51,Monocotyledonae capsule,1,0,Monocotyledonae capsule
+319,103,VII,100,250.1,51,Triticum monococcum,1,0,Tritirum
+320,103,VII,100,250.1,51,Triticum monococcum,1,0,Tritirum
+321,103,VII,100,250.1,51,Triticum turgidum ssp. dicoccum,4,2,Tritirum
+322,103,VII,100,250.1,51,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+323,103,VII,100,250.1,51,Hordeum vulgare ssp.,5,3,Hordeum vulgare
+324,103,VII,100,250.1,51,Gramineae indet.,0,20,Gramineae indet.
+325,103,VII,100,250.1,51,seed indet.,0,3,seed indet.
+326,104,VII,73,357.9,49,Fumaria sp.,1,0,Fumaria sp.
+327,104,VII,73,357.9,49,Cruciferae sp.,2,0,Cruciferae sp.
+328,104,VII,73,357.9,49,Cruciferae sp.,2,0,Cruciferae sp.
+329,104,VII,73,357.9,49,Vitis vinifera ssp. sylvestris,3,0,Vitis vinifera ssp. sylvestris
+330,104,VII,73,357.9,49,Pistacia cf. lentiscus,0,8,Pistacia cf. lentiscus
+331,104,VII,73,357.9,49,Lathyrus sp.,2,0,Lathyrus sp.
+332,104,VII,73,357.9,49,Lens sp.,24,0,Lens sp.
+333,104,VII,73,357.9,49,Lathyrus sp.,3,0,Lathyrus sp.
+334,104,VII,73,357.9,49,Medicago sp.,6,0,Medicago sp.
+335,104,VII,73,357.9,49,Leguminosae,3,0,Leguminosae
+336,104,VII,73,357.9,49,Leguminosae,14,0,Leguminosae
+337,104,VII,73,357.9,49,Prunus amygdalus,7,0,Prunus amygdalus
+338,104,VII,73,357.9,49,Lithospermum arvense,4,0,Lithospermum
+339,104,VII,73,357.9,49,Triticum monococcum,3,0,Tritirum
+340,104,VII,73,357.9,49,Triticum monococcum,6,0,Tritirum
+341,104,VII,73,357.9,49,Triticum turgidum ssp. dicoccum,30,9,Tritirum
+342,104,VII,73,357.9,49,Hordeum vulgare ssp.,17,11,Hordeum vulgare
+343,104,VII,73,357.9,49,Gramineae indet.,0,83,Gramineae indet.
+344,105,0,17,0,0,0,0,0,0
+345,106,VII,17,250.1,55,Cruciferae sp.,3,0,Cruciferae sp.
+346,106,VII,17,250.1,55,Pistacia cf. lentiscus,10,0,Pistacia cf. lentiscus
+347,106,VII,17,250.1,55,Vicia ervilia,1,0,Vicia
+348,106,VII,17,250.1,55,Lens sp.,11,0,Lens sp.
+349,106,VII,17,250.1,55,Lathyrus sp.,1,0,Lathyrus sp.
+350,106,VII,17,250.1,55,Lathyrus sp.,2,0,Lathyrus sp.
+351,106,VII,17,250.1,55,Medicago sp.,14,0,Medicago sp.
+352,106,VII,17,250.1,55,Leguminosae,3,0,Leguminosae
+353,106,VII,17,250.1,55,Leguminosae,7,0,Leguminosae
+354,106,VII,17,250.1,55,Prunus amygdalus,14,0,Prunus amygdalus
+355,106,VII,17,250.1,55,Liliaceae sp.,1,0,Liliaceae sp.
+356,106,VII,17,250.1,55,Triticum monococcum,5,0,Tritirum
+357,106,VII,17,250.1,55,Triticum turgidum ssp. dicoccum,10,0,Tritirum
+358,106,VII,17,250.1,55,Hordeum vulgare ssp.,5,0,Hordeum vulgare
+359,106,VII,17,250.1,55,spikelet fork,2,0,spikelet fork
+360,106,VII,17,250.1,55,glume base indet.,2,0,glume base indet.
+361,106,VII,17,250.1,55,Gramineae indet.,0,10,Gramineae indet.
+362,106,VII,17,250.1,55,seed indet.,0,1,seed indet.
+363,107,VII,46,279.9,46,Cruciferae sp.,13,0,Cruciferae sp.
+364,107,VII,46,279.9,46,Pistacia cf. lentiscus,0,5,Pistacia cf. lentiscus
+365,107,VII,46,279.9,46,Lens sp.,4,0,Lens sp.
+366,107,VII,46,279.9,46,Medicago sp.,5,0,Medicago sp.
+367,107,VII,46,279.9,46,Leguminosae,2,0,Leguminosae
+368,107,VII,46,279.9,46,Prunus amygdalus,10,0,Prunus amygdalus
+369,107,VII,46,279.9,46,Triticum monococcum,5,0,Tritirum
+370,107,VII,46,279.9,46,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+371,107,VII,46,279.9,46,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+372,107,VII,46,279.9,46,Hordeum vulgare ssp.,7,0,Hordeum vulgare
+373,107,VII,46,279.9,46,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+374,107,VII,46,279.9,46,spikelet fork,3,0,spikelet fork
+375,107,VII,46,279.9,46,Gramineae indet.,0,8,Gramineae indet.
+376,108,VII,27,77.8,100,Cruciferae sp.,3,0,Cruciferae sp.
+377,108,VII,27,77.8,100,Cruciferae sp.,1,0,Cruciferae sp.
+378,108,VII,27,77.8,100,Pistacia cf. lentiscus,0,18,Pistacia cf. lentiscus
+379,108,VII,27,77.8,100,Lens sp.,2,0,Lens sp.
+380,108,VII,27,77.8,100,Medicago sp.,16,0,Medicago sp.
+381,108,VII,27,77.8,100,Leguminosae,2,0,Leguminosae
+382,108,VII,27,77.8,100,Prunus amygdalus,10,0,Prunus amygdalus
+383,108,VII,27,77.8,100,Lithospermum arvense,1,0,Lithospermum
+384,108,VII,27,77.8,100,Triticum monococcum,8,0,Tritirum
+385,108,VII,27,77.8,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+386,108,VII,27,77.8,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+387,108,VII,27,77.8,100,Hordeum vulgare ssp.,2,4,Hordeum vulgare
+388,108,VII,27,77.8,100,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+389,108,VII,27,77.8,100,glume base indet.,13,0,glume base indet.
+390,108,VII,27,77.8,100,Gramineae indet.,0,5,Gramineae indet.
+391,108,VII,27,77.8,100,seed indet.,0,3,seed indet.
+392,109,VII,167,285.3,47,Cruciferae sp.,12,0,Cruciferae sp.
+393,109,VII,167,285.3,47,Pistacia cf. lentiscus,5,0,Pistacia cf. lentiscus
+394,109,VII,167,285.3,47,Lathyrus sp.,1,0,Lathyrus sp.
+395,109,VII,167,285.3,47,Lens sp.,2,0,Lens sp.
+396,109,VII,167,285.3,47,Lathyrus sp.,3,0,Lathyrus sp.
+397,109,VII,167,285.3,47,Prunus amygdalus,5,0,Prunus amygdalus
+398,109,VII,167,285.3,47,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+399,109,VII,167,285.3,47,Lithospermum arvense,1,0,Lithospermum
+400,109,VII,167,285.3,47,Echium sp.,2,0,Echium sp.
+401,109,VII,167,285.3,47,Alkanna sp.,1,0,Alkanna sp.
+402,109,VII,167,285.3,47,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+403,109,VII,167,285.3,47,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+404,109,VII,167,285.3,47,glume base indet.,6,0,glume base indet.
+405,109,VII,167,285.3,47,Gramineae indet.,0,13,Gramineae indet.
+406,109,VII,167,285.3,47,seed indet.,0,2,seed indet.
+407,110,VII,60,17.7,100,Lathyrus sp.,1,0,Lathyrus sp.
+408,110,VII,60,17.7,100,Medicago sp.,2,0,Medicago sp.
+409,110,VII,60,17.7,100,Echium sp.,3,0,Echium sp.
+410,110,VII,60,17.7,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+411,110,VII,60,17.7,100,Gramineae indet.,0,2,Gramineae indet.
+412,110,VII,60,17.7,100,seed indet.,0,1,seed indet.
+413,111,VII,82,99.4,100,Cruciferae sp.,1,0,Cruciferae sp.
+414,111,VII,82,99.4,100,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+415,111,VII,82,99.4,100,Lens sp.,1,0,Lens sp.
+416,111,VII,82,99.4,100,Medicago sp.,4,0,Medicago sp.
+417,111,VII,82,99.4,100,Prunus amygdalus,3,0,Prunus amygdalus
+418,111,VII,82,99.4,100,Lithospermum arvense,6,0,Lithospermum
+419,111,VII,82,99.4,100,Echium sp.,17,0,Echium sp.
+420,111,VII,82,99.4,100,Triticum monococcum,1,0,Tritirum
+421,111,VII,82,99.4,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+422,111,VII,82,99.4,100,Hordeum vulgare ssp.,3,5,Hordeum vulgare
+423,111,VII,82,99.4,100,Gramineae indet.,0,5,Gramineae indet.
+424,112,VII,145,35.7,100,Cruciferae sp.,3,0,Cruciferae sp.
+425,112,VII,145,35.7,100,Lathyrus sp.,1,0,Lathyrus sp.
+426,112,VII,145,35.7,100,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+427,112,VII,145,35.7,100,Medicago sp.,14,0,Medicago sp.
+428,112,VII,145,35.7,100,Prunus amygdalus,0,5,Prunus amygdalus
+429,112,VII,145,35.7,100,Lithospermum arvense,13,0,Lithospermum
+430,112,VII,145,35.7,100,L. officinale,1,0,Lithospermum
+431,112,VII,145,35.7,100,Echium sp.,35,0,Echium sp.
+432,112,VII,145,35.7,100,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+433,112,VII,145,35.7,100,Hordeum vulgare ssp.,1,2,Hordeum vulgare
+434,112,VII,145,35.7,100,Gramineae indet.,0,4,Gramineae indet.
+435,113,VII,91,12.1,100,Cruciferae sp.,2,0,Cruciferae sp.
+436,113,VII,91,12.1,100,Medicago sp.,1,0,Medicago sp.
+437,113,VII,91,12.1,100,Lithospermum arvense,1,0,Lithospermum
+438,113,VII,91,12.1,100,Echium sp.,7,0,Echium sp.
+439,113,VII,91,12.1,100,Alkanna sp.,2,0,Alkanna sp.
+440,113,VII,91,12.1,100,Boraginaceae sp.,1,0,Boraginaceae sp.
+441,114,VII,82,5.6,100,Medicago sp.,2,0,Medicago sp.
+442,114,VII,82,5.6,100,Prunus amygdalus,1,0,Prunus amygdalus
+443,114,VII,82,5.6,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+444,115,cleaning unit,0,0,0,0,0,0,0
+445,116,VII,432,196.8,51,Cruciferae sp.,7,0,Cruciferae sp.
+446,116,VII,432,196.8,51,Pistacia cf. lentiscus,2,0,Pistacia cf. lentiscus
+447,116,VII,432,196.8,51,Lathyrus sp.,3,0,Lathyrus sp.
+448,116,VII,432,196.8,51,Lens sp.,2,0,Lens sp.
+449,116,VII,432,196.8,51,Medicago sp.,5,0,Medicago sp.
+450,116,VII,432,196.8,51,Prunus amygdalus,2,0,Prunus amygdalus
+451,116,VII,432,196.8,51,Lithospermum arvense,4,0,Lithospermum
+452,116,VII,432,196.8,51,Lithospermurn cf. apulum,8,0,Lithospermum
+453,116,VII,432,196.8,51,Echium sp.,10,0,Echium sp.
+454,116,VII,432,196.8,51,Alkanna sp.,1,0,Alkanna sp.
+455,116,VII,432,196.8,51,Boraginaceae sp.,5,0,Boraginaceae sp.
+456,116,VII,432,196.8,51,Avena sp.,2,0,Avena sp.
+457,116,VII,432,196.8,51,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+458,116,VII,432,196.8,51,Hordeum vulgare ssp.,6,3,Hordeum vulgare
+459,116,VII,432,196.8,51,Gramineae indet.,0,2,Gramineae indet.
+460,116,VII,432,196.8,51,seed indet.,0,2,seed indet.
+461,117,VII,586,237.9,53,Cruciferae sp.,1,0,Cruciferae sp.
+462,117,VII,586,237.9,53,Lens sp.,1,0,Lens sp.
+463,117,VII,586,237.9,53,Lathyrus sp.,1,0,Lathyrus sp.
+464,117,VII,586,237.9,53,Lathyrus sp.,1,0,Lathyrus sp.
+465,117,VII,586,237.9,53,Medicago sp.,2,0,Medicago sp.
+466,117,VII,586,237.9,53,Prunus amygdalus,1,0,Prunus amygdalus
+467,117,VII,586,237.9,53,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+468,117,VII,586,237.9,53,Lithospermum arvense,16,0,Lithospermum
+469,117,VII,586,237.9,53,Phalaris sp.,2,0,Phalaris sp.
+470,117,VII,586,237.9,53,Triticum monococcum,2,2,Tritirum
+471,117,VII,586,237.9,53,Triticum turgidum ssp. dicoccum,18,2,Tritirum
+472,117,VII,586,237.9,53,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+473,117,VII,586,237.9,53,Hordeum vulgare ssp.,4,8,Hordeum vulgare
+474,117,VII,586,237.9,53,spikelet fork,10,0,spikelet fork
+475,117,VII,586,237.9,53,glume base indet.,1,0,glume base indet.
+476,117,VII,586,237.9,53,Gramineae indet.,0,18,Gramineae indet.
+477,117,VII,586,237.9,53,seed indet.,0,1,seed indet.
+478,118,VII,216,75.7,100,Prunus amygdalus,0,9,Prunus amygdalus
+479,118,VII,216,75.7,100,Lithospermum arvense,24,0,Lithospermum
+480,118,VII,216,75.7,100,Alkanna sp.,2,0,Alkanna sp.
+481,118,VII,216,75.7,100,Triticum monococcum,5,0,Tritirum
+482,118,VII,216,75.7,100,Triticum turgidum ssp. dicoccum,6,0,Tritirum
+483,118,VII,216,75.7,100,Triticum turgidum ssp. dicoccum,2,0,Tritirum
+484,118,VII,216,75.7,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+485,118,VII,216,75.7,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+486,118,VII,216,75.7,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+487,118,VII,216,75.7,100,glume base indet.,1,0,glume base indet.
+488,118,VII,216,75.7,100,Gramineae indet.,0,14,Gramineae indet.
+489,119,VII,185,88.8,100,Pistacia cf. lentiscus,5,0,Pistacia cf. lentiscus
+490,119,VII,185,88.8,100,Lens sp.,1,0,Lens sp.
+491,119,VII,185,88.8,100,Lathyrus sp.,1,0,Lathyrus sp.
+492,119,VII,185,88.8,100,Leguminosae,2,0,Leguminosae
+493,119,VII,185,88.8,100,Prunus amygdalus,5,0,Prunus amygdalus
+494,119,VII,185,88.8,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+495,119,VII,185,88.8,100,Lithospermum arvense,11,0,Lithospermum
+496,119,VII,185,88.8,100,Triticum monococcum,2,0,Tritirum
+497,119,VII,185,88.8,100,Triticum turgidum ssp. dicoccum,6,1,Tritirum
+498,119,VII,185,88.8,100,Triticum turgidum ssp. dicoccum,3,0,Tritirum
+499,119,VII,185,88.8,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+500,119,VII,185,88.8,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+501,119,VII,185,88.8,100,glume base indet.,1,0,glume base indet.
+502,119,VII,185,88.8,100,Gramineae indet.,0,20,Gramineae indet.
+503,119,VII,185,88.8,100,seed indet.,0,1,seed indet.
+504,120,VII,308,414.1,48,Cruciferae sp.,10,0,Cruciferae sp.
+505,120,VII,308,414.1,48,Vicia ervilia,2,0,Vicia
+506,120,VII,308,414.1,48,Lathyrus sp.,4,0,Lathyrus sp.
+507,120,VII,308,414.1,48,Lens sp.,7,0,Lens sp.
+508,120,VII,308,414.1,48,Medicago sp.,11,0,Medicago sp.
+509,120,VII,308,414.1,48,Leguminosae,18,0,Leguminosae
+510,120,VII,308,414.1,48,Prunus amygdalus,24,0,Prunus amygdalus
+511,120,VII,308,414.1,48,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+512,120,VII,308,414.1,48,Lithospermum arvense,8,0,Lithospermum
+513,120,VII,308,414.1,48,Alkanna sp.,2,0,Alkanna sp.
+514,120,VII,308,414.1,48,Avena sp.,0,2,Avena sp.
+515,120,VII,308,414.1,48,Triticum turgidum ssp. dicoccum,24,0,Tritirum
+516,120,VII,308,414.1,48,T. cf. aestivum/durum,7,0,Tritirum
+517,120,VII,308,414.1,48,Triticum sp.,3,13,Tritirum
+518,120,VII,308,414.1,48,Hordeum vulgare ssp.,8,6,Hordeum vulgare
+519,120,VII,308,414.1,48,Hordeum vulgare ssp. Distichum rachis,1,0,Hordeum vulgare
+520,120,VII,308,414.1,48,spikelet fork,1,0,spikelet fork
+521,120,VII,308,414.1,48,Gramineae indet.,0,21,Gramineae indet.
+522,120,VII,308,414.1,48,seed indet.,0,5,seed indet.
+523,121,VII,62,360.2,44,Cruciferae sp.,12,0,Cruciferae sp.
+524,121,VII,62,360.2,44,Lathyrus sp.,4,0,Lathyrus sp.
+525,121,VII,62,360.2,44,Lens sp.,4,0,Lens sp.
+526,121,VII,62,360.2,44,Pisum/Vicia sp.,4,0,Pisum/Vicia sp.
+527,121,VII,62,360.2,44,Medicago sp.,11,0,Medicago sp.
+528,121,VII,62,360.2,44,Leguminosae,10,0,Leguminosae
+529,121,VII,62,360.2,44,Prunus amygdalus,27,0,Prunus amygdalus
+530,121,VII,62,360.2,44,Lithospermum arvense,6,0,Lithospermum
+531,121,VII,62,360.2,44,Triticum monococcum,1,0,Tritirum
+532,121,VII,62,360.2,44,Triticum turgidum ssp. dicoccum,25,3,Tritirum
+533,121,VII,62,360.2,44,Hordeum vulgare ssp.,0,9,Hordeum vulgare
+534,121,VII,62,360.2,44,Gramineae indet.,0,30,Gramineae indet.
+535,121,VII,62,360.2,44,seed indet.,0,5,seed indet.
+536,122,VII,308,385.3,52,Cruciferae sp.,7,0,Cruciferae sp.
+537,122,VII,308,385.3,52,Vitis vinifera ssp. sylvestris,0,1,Vitis vinifera ssp. sylvestris
+538,122,VII,308,385.3,52,Lathyrus sp.,1,0,Lathyrus sp.
+539,122,VII,308,385.3,52,Lens sp.,2,0,Lens sp.
+540,122,VII,308,385.3,52,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+541,122,VII,308,385.3,52,Medicago sp.,25,0,Medicago sp.
+542,122,VII,308,385.3,52,Leguminosae,2,0,Leguminosae
+543,122,VII,308,385.3,52,Leguminosae,6,0,Leguminosae
+544,122,VII,308,385.3,52,Prunus amygdalus,14,0,Prunus amygdalus
+545,122,VII,308,385.3,52,Lithospermum arvense,3,0,Lithospermum
+546,122,VII,308,385.3,52,Alkanna sp.,1,0,Alkanna sp.
+547,122,VII,308,385.3,52,Triticum monococcum,1,0,Tritirum
+548,122,VII,308,385.3,52,Triticum turgidum ssp. dicoccum,4,0,Tritirum
+549,122,VII,308,385.3,52,Hordeum vulgare ssp.,1,1,Hordeum vulgare
+550,122,VII,308,385.3,52,spikelet fork,2,0,spikelet fork
+551,122,VII,308,385.3,52,Gramineae indet.,0,9,Gramineae indet.
+552,122,VII,308,385.3,52,seed indet.,0,6,seed indet.
+553,123,VII,278,453.5,51,Cruciferae sp.,1,0,Cruciferae sp.
+554,123,VII,278,453.5,51,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+555,123,VII,278,453.5,51,small Pisum sp.,1,0,small Pisum sp.
+556,123,VII,278,453.5,51,Medicago sp.,20,0,Medicago sp.
+557,123,VII,278,453.5,51,Prunus amygdalus,18,0,Prunus amygdalus
+558,123,VII,278,453.5,51,Lithospermum arvense,9,0,Lithospermum
+559,123,VII,278,453.5,51,Alkanna sp.,1,0,Alkanna sp.
+560,123,VII,278,453.5,51,Triticum monococcum,1,0,Tritirum
+561,123,VII,278,453.5,51,Triticum monococcum,1,0,Tritirum
+562,123,VII,278,453.5,51,Triticum turgidum ssp. dicoccum,1,1,Tritirum
+563,123,VII,278,453.5,51,Hordeum vulgare ssp.,1,4,Hordeum vulgare
+564,123,VII,278,453.5,51,glume base indet.,1,0,glume base indet.
+565,123,VII,278,453.5,51,Gramineae indet.,0,23,Gramineae indet.
+566,123,VII,278,453.5,51,seed indet.,0,5,seed indet.
+567,124,VII,301,284.1,100,Cruciferae sp.,4,0,Cruciferae sp.
+568,124,VII,301,284.1,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+569,124,VII,301,284.1,100,Lathyrus sp.,1,0,Lathyrus sp.
+570,124,VII,301,284.1,100,Lathyrus sp.,1,0,Lathyrus sp.
+571,124,VII,301,284.1,100,Medicago sp.,1,0,Medicago sp.
+572,124,VII,301,284.1,100,Leguminosae,2,0,Leguminosae
+573,124,VII,301,284.1,100,Prunus amygdalus,12,0,Prunus amygdalus
+574,124,VII,301,284.1,100,Lithospermum arvense,4,0,Lithospermum
+575,124,VII,301,284.1,100,Lithospermurn cf. apulum,8,0,Lithospermum
+576,124,VII,301,284.1,100,Echium sp.,3,0,Echium sp.
+577,124,VII,301,284.1,100,Alkanna sp.,1,0,Alkanna sp.
+578,124,VII,301,284.1,100,Liliaceae sp.,3,0,Liliaceae sp.
+579,124,VII,301,284.1,100,Triticum monococcum,1,0,Tritirum
+580,124,VII,301,284.1,100,Triticum turgidum ssp. dicoccum,2,1,Tritirum
+581,124,VII,301,284.1,100,Hordeum vulgare ssp.,3,0,Hordeum vulgare
+582,124,VII,301,284.1,100,Gramineae indet.,0,13,Gramineae indet.
+583,124,VII,301,284.1,100,seed indet.,0,2,seed indet.
+584,125,VII,34,15.5,100,Prunus amygdalus,0,2,Prunus amygdalus
+585,126,VII,52,55.7,100,Cruciferae sp.,4,0,Cruciferae sp.
+586,126,VII,52,55.7,100,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+587,126,VII,52,55.7,100,Lens sp.,2,0,Lens sp.
+588,126,VII,52,55.7,100,Medicago sp.,5,0,Medicago sp.
+589,126,VII,52,55.7,100,Prunus amygdalus,9,0,Prunus amygdalus
+590,126,VII,52,55.7,100,Lithospermum arvense,1,0,Lithospermum
+591,126,VII,52,55.7,100,Echium sp.,1,0,Echium sp.
+592,126,VII,52,55.7,100,Triticum turgidum ssp. dicoccum,7,1,Tritirum
+593,126,VII,52,55.7,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+594,126,VII,52,55.7,100,Gramineae indet.,0,8,Gramineae indet.
+595,127,cleaning unit,0,0,0,0,0,0,0
+596,128,VII,216,10.7,100,Lens sp.,13,0,Lens sp.
+597,128,VII,216,10.7,100,Leguminosae,2,0,Leguminosae
+598,128,VII,216,10.7,100,Leguminosae,5,0,Leguminosae
+599,128,VII,216,10.7,100,Leguminosae,1,0,Leguminosae
+600,128,VII,216,10.7,100,Lithospermum arvense,1,0,Lithospermum
+601,128,VII,216,10.7,100,Anchusa sp.,2,0,Anchusa sp.
+602,128,VII,216,10.7,100,Alkanna sp.,1,0,Alkanna sp.
+603,128,VII,216,10.7,100,Triticum turgidum ssp. dicoccum,3,5,Tritirum
+604,129,submitted for C14 dating,0,0,0,0,0,0,0
+605,130,VI/VII,222,6.6,100,Lens sp.,5,19,Lens sp.
+606,130,VI/VII,222,6.6,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+607,130,VI/VII,222,6.6,100,Hordeum vulgare ssp.,1,1,Hordeum vulgare
+608,130,VI/VII,222,6.6,100,Gramineae indet.,0,14,Gramineae indet.
+609,131,VI/VII,203,3.9,100,Lens sp.,9,0,Lens sp.
+610,131,VI/VII,203,3.9,100,Hordeum vulgare ssp.,0,4,Hordeum vulgare
+611,131,VI/VII,203,3.9,100,seed indet.,0,2,seed indet.
+612,132,VI/VII,58,0.5,100,Lithospermum arvense,3,0,Lithospermum
+613,132,VI/VII,58,0.5,100,Anchusa sp.,1,0,Anchusa sp.
+614,132,VI/VII,58,0.5,100,Gramineae indet.,0,1,Gramineae indet.
+615,133,VI,35,0.1,100,0,0,0,0
+616,134,VI,73,0.6,100,Prunus amygdalus,0,1,Prunus amygdalus
+617,135,VI,65,1.8,100,0,0,0,0
+618,136,VI,173,7.1,100,Cruciferae sp.,2,0,Cruciferae sp.
+619,136,VI,173,7.1,100,Prunus amygdalus,0,2,Prunus amygdalus
+620,136,VI,173,7.1,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+621,137,VI,151,3,100,Prunus amygdalus,0,2,Prunus amygdalus
+622,137,VI,151,3,100,Lithospermum arvense,1,0,Lithospermum
+623,138,VI,86,3.9,100,Lens sp.,3,0,Lens sp.
+624,138,VI,86,3.9,100,Prunus amygdalus,0,2,Prunus amygdalus
+625,139,VI,108,2.4,100,Lens sp.,1,0,Lens sp.
+626,139,VI,108,2.4,100,Gramineae indet.,0,1,Gramineae indet.
+627,140,VI,121,12,100,Cruciferae sp.,1,0,Cruciferae sp.
+628,140,VI,121,12,100,Lens sp.,1,0,Lens sp.
+629,140,VI,121,12,100,Prunus amygdalus,0,3,Prunus amygdalus
+630,140,VI,121,12,100,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+631,141,VI,6,2.6,100,Alkanna sp.,1,0,Alkanna sp.
+632,142,cleaning unit,0,0,0,0,0,0,0
+633,143,VI,154,10,100,Lens sp.,1,0,Lens sp.
+634,143,VI,154,10,100,Medicago sp.,0,1,Medicago sp.
+635,143,VI,154,10,100,Triticum turgidum ssp. dicoccum,1,0,Tritirum
+636,144,VI,123,13.7,100,Prunus amygdalus,1,0,Prunus amygdalus
+637,144,VI,123,13.7,100,Alkanna sp.,4,0,Alkanna sp.
+638,144,VI,123,13.7,100,Gramineae indet.,0,6,Gramineae indet.
+639,145,VI,401,26.3,100,Lathyrus sp.,2,0,Lathyrus sp.
+640,145,VI,401,26.3,100,Prunus amygdalus,1,0,Prunus amygdalus
+641,145,VI,401,26.3,100,Triticum turgidum ssp. dicoccum,10,1,Tritirum
+642,145,VI,401,26.3,100,Gramineae indet.,0,5,Gramineae indet.
+643,145,VI,401,26.3,100,seed indet.,0,1,seed indet.
+644,146,V/VI,308,8.3,100,Polygonum sp.,1,0,Polygonatum
+645,146,V/VI,308,8.3,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+646,146,V/VI,308,8.3,100,Lens sp.,2,0,Lens sp.
+647,146,V/VI,308,8.3,100,Prunus amygdalus,0,8,Prunus amygdalus
+648,146,V/VI,308,8.3,100,Alkanna sp.,1,0,Alkanna sp.
+649,146,V/VI,308,8.3,100,Avena sp.,3,0,Avena sp.
+650,146,V/VI,308,8.3,100,Gramineae indet.,0,7,Gramineae indet.
+651,147,cleaning unit,0,0,0,0,0,0,0
+652,148,V,154,20.8,100,Capparis sp.,7,0,Capparis sp.
+653,148,V,154,20.8,100,Pistacia cf. lentiscus,2,0,Pistacia cf. lentiscus
+654,148,V,154,20.8,100,Medicago sp.,7,0,Medicago sp.
+655,148,V,154,20.8,100,Prunus amygdalus,3,0,Prunus amygdalus
+656,148,V,154,20.8,100,Alkanna sp.,1,0,Alkanna sp.
+657,148,V,154,20.8,100,Avena sp.,16,0,Avena sp.
+658,149,V,163,10.7,100,Capparis sp.,2,0,Capparis sp.
+659,149,V,163,10.7,100,Pistacia cf. lentiscus,7,0,Pistacia cf. lentiscus
+660,149,V,163,10.7,100,Lens sp.,1,0,Lens sp.
+661,149,V,163,10.7,100,Prunus amygdalus,0,4,Prunus amygdalus
+662,149,V,163,10.7,100,Alkanna sp.,2,0,Alkanna sp.
+663,149,V,163,10.7,100,Avena sp.,5,3,Avena sp.
+664,149,V,163,10.7,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+665,149,V,163,10.7,100,spikelet fork,0,1,spikelet fork
+666,149,V,163,10.7,100,Gramineae indet.,0,12,Gramineae indet.
+667,150,V,10,59.7,41,Lathyrus sp.,1,0,Lathyrus sp.
+668,150,V,10,59.7,41,Lens sp.,2,0,Lens sp.
+669,150,V,10,59.7,41,Leguminosae,7,0,Leguminosae
+670,150,V,10,59.7,41,Prunus amygdalus,4,0,Prunus amygdalus
+671,150,V,10,59.7,41,Gramineae indet.,0,4,Gramineae indet.
+672,150,V,10,59.7,41,culm node frag.,0,1,culm node
+673,151,V,463,48.9,47,Adonis sp.,1,0,Adonis sp.
+674,151,V,463,48.9,47,Lens sp.,1,0,Lens sp.
+675,151,V,463,48.9,47,Prunus amygdalus,3,0,Prunus amygdalus
+676,151,V,463,48.9,47,Alkanna sp.,2,0,Alkanna sp.
+677,151,V,463,48.9,47,Avena sp.,14,10,Avena sp.
+678,152,cleaning unit,0,0,0,0,0,0,0
+679,153,V,103,16.8,100,Lens sp.,1,0,Lens sp.
+680,153,V,103,16.8,100,Leguminosae,2,0,Leguminosae
+681,153,V,103,16.8,100,Prunus amygdalus,2,0,Prunus amygdalus
+682,153,V,103,16.8,100,Avena sp.,2,3,Avena sp.
+683,153,V,103,16.8,100,culm node indet.,2,0,culm node
+684,154,V,243,71.3,60,Leguminosae,0,3,Leguminosae
+685,154,V,243,71.3,60,Prunus amygdalus,2,0,Prunus amygdalus
+686,154,V,243,71.3,60,Avena sp.,1,0,Avena sp.
+687,155,V,59,54.4,100,Pistacia cf. lentiscus,0,12,Pistacia cf. lentiscus
+688,155,V,59,54.4,100,Vicia ervilia,1,0,Vicia
+689,155,V,59,54.4,100,Lathyrus sp.,1,0,Lathyrus sp.
+690,155,V,59,54.4,100,Lens sp.,6,0,Lens sp.
+691,155,V,59,54.4,100,Lathyrus sp.,2,0,Lathyrus sp.
+692,155,V,59,54.4,100,Prunus amygdalus,6,0,Prunus amygdalus
+693,155,V,59,54.4,100,Avena sp.,1,0,Avena sp.
+694,156,V,390,59.1,100,Cruciferae sp.,1,0,Cruciferae sp.
+695,156,V,390,59.1,100,Pistacia cf. lentiscus,14,0,Pistacia cf. lentiscus
+696,156,V,390,59.1,100,Leguminosae,3,0,Leguminosae
+697,156,V,390,59.1,100,Prunus amygdalus,4,0,Prunus amygdalus
+698,156,V,390,59.1,100,Lithospermum arvense,1,0,Lithospermum
+699,156,V,390,59.1,100,Hordeum vulgare ssp.,0,1,Hordeum vulgare
+700,157,V,50,67.4,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+701,157,V,50,67.4,100,Prunus amygdalus,6,0,Prunus amygdalus
+702,157,V,50,67.4,100,Lithospermum arvense,1,0,Lithospermum
+703,157,V,50,67.4,100,Liliaceae sp.,2,0,Liliaceae sp.
+704,158,V,18,23.7,100,Pistacia cf. lentiscus,1,2,Pistacia cf. lentiscus
+705,158,V,18,23.7,100,Lathyrus sp.,1,0,Lathyrus sp.
+706,158,V,18,23.7,100,Prunus amygdalus,3,0,Prunus amygdalus
+707,158,V,18,23.7,100,Lithospermum arvense,1,0,Lithospermum
+708,158,V,18,23.7,100,Avena sp.,1,0,Avena sp.
+709,159,V,184,20.2,100,Vicia ervilia,1,0,Vicia
+710,159,V,184,20.2,100,Lathyrus sp.,1,0,Lathyrus sp.
+711,159,V,184,20.2,100,Lens sp.,3,0,Lens sp.
+712,159,V,184,20.2,100,Prunus amygdalus,3,0,Prunus amygdalus
+713,159,V,184,20.2,100,Alkanna sp.,1,0,Alkanna sp.
+714,159,V,184,20.2,100,culm node indet.,2,0,culm node
+715,160,IV/V,18,5.8,100,Prunus amygdalus,3,0,Prunus amygdalus
+716,160,IV/V,18,5.8,100,Lithospermum arvense,1,0,Lithospermum
+717,160,IV/V,18,5.8,100,Avena sp.,1,0,Avena sp.
+718,161,IV/V,21,144.6,100,Lens sp.,1,0,Lens sp.
+719,161,IV/V,21,144.6,100,Leguminosae,0,2,Leguminosae
+720,161,IV/V,21,144.6,100,Prunus amygdalus,7,0,Prunus amygdalus
+721,162,IV/V,51,255.7,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+722,162,IV/V,51,255.7,100,Lathyrus sp.,2,0,Lathyrus sp.
+723,162,IV/V,51,255.7,100,Lens sp.,1,0,Lens sp.
+724,162,IV/V,51,255.7,100,Leguminosae,1,0,Leguminosae
+725,162,IV/V,51,255.7,100,Prunus amygdalus,15,0,Prunus amygdalus
+726,162,IV/V,51,255.7,100,Coriandrum sp.,1,0,Coriandrum sp.
+727,162,IV/V,51,255.7,100,Lithospermum arvense,5,0,Lithospermum
+728,162,IV/V,51,255.7,100,Liliaceae sp.,2,0,Liliaceae sp.
+729,162,IV/V,51,255.7,100,Avena sp.,3,0,Avena sp.
+730,162,IV/V,51,255.7,100,seed indet.,0,3,seed indet.
+731,163,IV/V,42,30.9,100,Prunus amygdalus,3,0,Prunus amygdalus
+732,163,IV/V,42,30.9,100,culm node indet.,2,0,culm node
+733,164,IV/V,21,79.2,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+734,164,IV/V,21,79.2,100,Prunus amygdalus,3,0,Prunus amygdalus
+735,164,IV/V,21,79.2,100,Avena sp.,2,1,Avena sp.
+736,165,IV/V,53,83.4,100,Pistacia cf. lentiscus,3,12,Pistacia cf. lentiscus
+737,165,IV/V,53,83.4,100,Lens sp.,2,0,Lens sp.
+738,165,IV/V,53,83.4,100,Medicago sp.,1,0,Medicago sp.
+739,165,IV/V,53,83.4,100,Prunus amygdalus,4,0,Prunus amygdalus
+740,165,IV/V,53,83.4,100,Lithospermum arvense,18,0,Lithospermum
+741,165,IV/V,53,83.4,100,Liliaceae sp.,1,0,Liliaceae sp.
+742,166,IV/V,41,92.1,100,Pistacia cf. lentiscus,7,10,Pistacia cf. lentiscus
+743,166,IV/V,41,92.1,100,Prunus amygdalus,8,0,Prunus amygdalus
+744,166,IV/V,41,92.1,100,Lithospermum arvense,14,0,Lithospermum
+745,166,IV/V,41,92.1,100,Avena sp.,3,4,Avena sp.
+746,167,IV/V,42,72.3,100,Pistacia cf. lentiscus,1,1,Pistacia cf. lentiscus
+747,167,IV/V,42,72.3,100,Lathyrus sp.,2,0,Lathyrus sp.
+748,167,IV/V,42,72.3,100,Leguminosae,2,0,Leguminosae
+749,167,IV/V,42,72.3,100,Leguminosae,1,0,Leguminosae
+750,167,IV/V,42,72.3,100,Prunus amygdalus,9,0,Prunus amygdalus
+751,167,IV/V,42,72.3,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+752,167,IV/V,42,72.3,100,Lithospermum arvense,12,0,Lithospermum
+753,167,IV/V,42,72.3,100,seed indet.,0,5,seed indet.
+754,168,IV,84,101.7,100,Pistacia cf. lentiscus,7,6,Pistacia cf. lentiscus
+755,168,IV,84,101.7,100,Lens sp.,3,0,Lens sp.
+756,168,IV,84,101.7,100,Prunus amygdalus,10,0,Prunus amygdalus
+757,168,IV,84,101.7,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+758,168,IV,84,101.7,100,Lithospermum arvense,82,0,Lithospermum
+759,168,IV,84,101.7,100,Liliaceae sp.,1,0,Liliaceae sp.
+760,168,IV,84,101.7,100,Avena sp.,1,0,Avena sp.
+761,169,IV,16,7.2,100,Prunus amygdalus,0,16,Prunus amygdalus
+762,169,IV,16,7.2,100,Pyrus amygdaliformis,2,0,Pyrus amygdaliformis
+763,169,IV,16,7.2,100,Lithospermum arvense,13,0,Lithospermum
+764,169,IV,16,7.2,100,Liliaceae sp.,1,0,Liliaceae sp.
+765,170,IV,148,154.3,100,Malva parviflora,2,0,Malva parviflora
+766,170,IV,148,154.3,100,Pistacia cf. lentiscus,12,0,Pistacia cf. lentiscus
+767,170,IV,148,154.3,100,Lathyrus sp.,1,0,Lathyrus sp.
+768,170,IV,148,154.3,100,Prunus amygdalus,25,0,Prunus amygdalus
+769,170,IV,148,154.3,100,Lithospermum arvense,963,0,Lithospermum
+770,170,IV,148,154.3,100,Anchusa sp.,1,0,Anchusa sp.
+771,170,IV,148,154.3,100,Alkanna sp.,1,0,Alkanna sp.
+772,170,IV,148,154.3,100,Liliaceae sp.,1,0,Liliaceae sp.
+773,170,IV,148,154.3,100,Avena sp.,29,4,Avena sp.
+774,170,IV,148,154.3,100,Hordeum vulgare ssp.,1,2,Hordeum vulgare
+775,171,IV,60,79.3,100,Capparis sp.,9,0,Capparis sp.
+776,171,IV,60,79.3,100,Pistacia cf. lentiscus,10,0,Pistacia cf. lentiscus
+777,171,IV,60,79.3,100,Lens sp.,1,0,Lens sp.
+778,171,IV,60,79.3,100,Prunus amygdalus,3,0,Prunus amygdalus
+779,171,IV,60,79.3,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+780,171,IV,60,79.3,100,Lithospermum arvense,91,76,Lithospermum
+781,171,IV,60,79.3,100,Avena sp.,4,5,Avena sp.
+782,171,IV,60,79.3,100,culm node frag.,0,1,culm node
+783,171,IV,60,79.3,100,seed indet.,0,12,seed indet.
+784,172,IV,216,235.2,100,Adonis sp.,1,0,Adonis sp.
+785,172,IV,216,235.2,100,Malva parviflora,6,0,Malva parviflora
+786,172,IV,216,235.2,100,Pistacia cf. lentiscus,25,0,Pistacia cf. lentiscus
+787,172,IV,216,235.2,100,Lathyrus sp.,1,0,Lathyrus sp.
+788,172,IV,216,235.2,100,Lens sp.,4,0,Lens sp.
+789,172,IV,216,235.2,100,small Pisum sp.,1,0,small Pisum sp.
+790,172,IV,216,235.2,100,Leguminosae,13,0,Leguminosae
+791,172,IV,216,235.2,100,Leguminosae,2,0,Leguminosae
+792,172,IV,216,235.2,100,Prunus amygdalus,15,0,Prunus amygdalus
+793,172,IV,216,235.2,100,Pyrus amygdaliformis,2,0,Pyrus amygdaliformis
+794,172,IV,216,235.2,100,Calendula sp.,1,0,Calendula sp.
+795,172,IV,216,235.2,100,Lithospermum arvense,2404,0,Lithospermum
+796,172,IV,216,235.2,100,L. officinale,4,0,Lithospermum
+797,172,IV,216,235.2,100,Anchusa sp.,4,0,Anchusa sp.
+798,172,IV,216,235.2,100,Alkanna sp.,9,0,Alkanna sp.
+799,172,IV,216,235.2,100,Liliaceae sp.,4,0,Liliaceae sp.
+800,172,IV,216,235.2,100,Phalaris sp.,2,0,Phalaris sp.
+801,172,IV,216,235.2,100,Avena sp.,12,7,Avena sp.
+802,172,IV,216,235.2,100,culm node frag.,0,1,culm node
+803,172,IV,216,235.2,100,Gramineae indet.,0,1,Gramineae indet.
+804,172,IV,216,235.2,100,seed indet.,0,11,seed indet.
+805,173,IV,20,74.4,100,Pistacia cf. lentiscus,5,0,Pistacia cf. lentiscus
+806,173,IV,20,74.4,100,Lens sp.,1,0,Lens sp.
+807,173,IV,20,74.4,100,Prunus amygdalus,8,0,Prunus amygdalus
+808,173,IV,20,74.4,100,Lithospermum arvense,451,0,Lithospermum
+809,173,IV,20,74.4,100,Alkanna sp.,2,0,Alkanna sp.
+810,173,IV,20,74.4,100,Avena sp.,4,0,Avena sp.
+811,173,IV,20,74.4,100,seed indet.,0,1,seed indet.
+812,174,IV,139,288.1,100,Cruciferae sp.,1,0,Cruciferae sp.
+813,174,IV,139,288.1,100,Pistacia cf. lentiscus,103,0,Pistacia cf. lentiscus
+814,174,IV,139,288.1,100,Lathyrus sp.,4,0,Lathyrus sp.
+815,174,IV,139,288.1,100,Lens sp.,9,0,Lens sp.
+816,174,IV,139,288.1,100,Lathyrus sp.,1,0,Lathyrus sp.
+817,174,IV,139,288.1,100,Leguminosae,2,0,Leguminosae
+818,174,IV,139,288.1,100,Prunus amygdalus,46,0,Prunus amygdalus
+819,174,IV,139,288.1,100,Pyrus amygdaliformis,0,14,Pyrus amygdaliformis
+820,174,IV,139,288.1,100,Lithospermum arvense,245,0,Lithospermum
+821,174,IV,139,288.1,100,Alkanna sp.,4,0,Alkanna sp.
+822,174,IV,139,288.1,100,cf. Colchicum/Polygonatum,2,0,cf. Colchicum/Polygonatum
+823,174,IV,139,288.1,100,Polygonatum,0,0,Polygonatum
+824,174,IV,139,288.1,100,Avena sp.,30,0,Avena sp.
+825,174,IV,139,288.1,100,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+826,174,IV,139,288.1,100,Gramineae indet.,0,1,Gramineae indet.
+827,174,IV,139,288.1,100,seed indet.,0,7,seed indet.
+828,175,IV,112,75.6,100,Pistacia cf. lentiscus,35,0,Pistacia cf. lentiscus
+829,175,IV,112,75.6,100,Lathyrus sp.,1,0,Lathyrus sp.
+830,175,IV,112,75.6,100,Lens sp.,10,0,Lens sp.
+831,175,IV,112,75.6,100,Pisum/Vicia sp.,2,0,Pisum/Vicia sp.
+832,175,IV,112,75.6,100,Leguminosae,2,0,Leguminosae
+833,175,IV,112,75.6,100,Prunus amygdalus,10,0,Prunus amygdalus
+834,175,IV,112,75.6,100,Pyrus amygdaliformis,4,0,Pyrus amygdaliformis
+835,175,IV,112,75.6,100,Lithospermum arvense,60,0,Lithospermum
+836,175,IV,112,75.6,100,Avena sp.,15,0,Avena sp.
+837,175,IV,112,75.6,100,seed indet.,0,4,seed indet.
+838,176,III,649,351.3,73,Pistacia cf. lentiscus,18,0,Pistacia cf. lentiscus
+839,176,III,649,351.3,73,Lathyrus sp.,4,0,Lathyrus sp.
+840,176,III,649,351.3,73,Lens sp.,102,0,Lens sp.
+841,176,III,649,351.3,73,Lathyrus sp.,3,0,Lathyrus sp.
+842,176,III,649,351.3,73,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+843,176,III,649,351.3,73,large Pisum sp.,1,0,large Pisum sp.
+844,176,III,649,351.3,73,Leguminosae,2,0,Leguminosae
+845,176,III,649,351.3,73,Leguminosae,2,0,Leguminosae
+846,176,III,649,351.3,73,Leguminosae,1,0,Leguminosae
+847,176,III,649,351.3,73,Prunus amygdalus,151,0,Prunus amygdalus
+848,176,III,649,351.3,73,cf. Colchicum/Polygonatum,4,0,cf. Colchicum/Polygonatum
+849,176,III,649,351.3,73,Avena sp.,24,174,Avena sp.
+850,176,III,649,351.3,73,Hordeum vulgare ssp.,1,15,Hordeum vulgare
+851,176,III,649,351.3,73,Phalaris sp.,4,0,Phalaris sp.
+852,176,III,649,351.3,73,seed indet.,0,10,seed indet.
+853,177,III,346,602.4,62,Adonis sp.,2,0,Adonis sp.
+854,177,III,346,602.4,62,Pistacia cf. lentiscus,139,0,Pistacia cf. lentiscus
+855,177,III,346,602.4,62,Lathyrus sp.,4,0,Lathyrus sp.
+856,177,III,346,602.4,62,Lens sp.,74,0,Lens sp.
+857,177,III,346,602.4,62,Lathyrus sp.,1,0,Lathyrus sp.
+858,177,III,346,602.4,62,Pisum/Vicia sp.,3,0,Pisum/Vicia sp.
+859,177,III,346,602.4,62,Leguminosae,9,0,Leguminosae
+860,177,III,346,602.4,62,Leguminosae,22,0,Leguminosae
+861,177,III,346,602.4,62,Leguminosae,4,0,Leguminosae
+862,177,III,346,602.4,62,Prunus amygdalus,342,0,Prunus amygdalus
+863,177,III,346,602.4,62,Pyrus amygdaliformis,49,0,Pyrus amygdaliformis
+864,177,III,346,602.4,62,Alkanna sp.,1,0,Alkanna sp.
+865,177,III,346,602.4,62,Liliaceae sp.,2,0,Liliaceae sp.
+866,177,III,346,602.4,62,cf. Colchicum/Polygonatum,2,0,cf. Colchicum/Polygonatum
+867,177,III,346,602.4,62,Polygonatum,0,0,Polygonatum
+868,177,III,346,602.4,62,Phalaris sp.,4,0,Phalaris sp.
+869,177,III,346,602.4,62,Avena sp.,78,0,Avena sp.
+870,177,III,346,602.4,62,Hordeum vulgare ssp.,2,2,Hordeum vulgare
+871,178,III,14,103.4,100,Adonis sp.,4,0,Adonis sp.
+872,178,III,14,103.4,100,Pistacia cf. lentiscus,316,0,Pistacia cf. lentiscus
+873,178,III,14,103.4,100,Vicla!Lathyrus sp. oo. 1,7,0,Vicia
+874,178,III,14,103.4,100,Lens sp.,105,0,Lens sp.
+875,178,III,14,103.4,100,Lathyrus sp.,1,0,Lathyrus sp.
+876,178,III,14,103.4,100,Medicago sp.,2,0,Medicago sp.
+877,178,III,14,103.4,100,Leguminosae,13,0,Leguminosae
+878,178,III,14,103.4,100,Leguminosae,10,0,Leguminosae
+879,178,III,14,103.4,100,Prunus amygdalus,137,0,Prunus amygdalus
+880,178,III,14,103.4,100,Pyrus amygdaliformis,120,0,Pyrus amygdaliformis
+881,178,III,14,103.4,100,Lithospermum arvense,2,0,Lithospermum
+882,178,III,14,103.4,100,Alkanna sp.,1,0,Alkanna sp.
+883,178,III,14,103.4,100,Liliaceae sp.,33,0,Liliaceae sp.
+884,178,III,14,103.4,100,cf. Colchicum/Polygonatum,7,0,cf. Colchicum/Polygonatum
+885,178,III,14,103.4,100,Phalaris sp.,6,0,Phalaris sp.
+886,178,III,14,103.4,100,Avena sp.,207,0,Avena sp.
+887,178,III,14,103.4,100,Hordeum vulgare ssp.,13,0,Hordeum vulgare
+888,178,III,14,103.4,100,Gramineae indet.,0,15,Gramineae indet.
+889,179,III,277,492.3,100,Adonis sp.,1,0,Adonis sp.
+890,179,III,277,492.3,100,Cruciferae sp.,3,0,Cruciferae sp.
+891,179,III,277,492.3,100,Capparis sp.,10,0,Capparis sp.
+892,179,III,277,492.3,100,Malva parviflora,1,0,Malva parviflora
+893,179,III,277,492.3,100,Erodium sp.,5,0,Erodium sp.
+894,179,III,277,492.3,100,Pistacia cf. lentiscus,167,0,Pistacia cf. lentiscus
+895,179,III,277,492.3,100,Lathyrus sp.,10,0,Lathyrus sp.
+896,179,III,277,492.3,100,Lens sp.,65,0,Lens sp.
+897,179,III,277,492.3,100,Lathyrus sp.,1,0,Lathyrus sp.
+898,179,III,277,492.3,100,Lathyrus sp.,3,0,Lathyrus sp.
+899,179,III,277,492.3,100,Leguminosae,40,0,Leguminosae
+900,179,III,277,492.3,100,Leguminosae,3,0,Leguminosae
+901,179,III,277,492.3,100,Prunus amygdalus,150,0,Prunus amygdalus
+902,179,III,277,492.3,100,Pyrus amygdaliformis,54,0,Pyrus amygdaliformis
+903,179,III,277,492.3,100,Lithospermum arvense,3,0,Lithospermum
+904,179,III,277,492.3,100,Liliaceae sp.,6,0,Liliaceae sp.
+905,179,III,277,492.3,100,cf. Colchicum/Polygonatum,7,0,cf. Colchicum/Polygonatum
+906,179,III,277,492.3,100,Phalaris sp.,1,0,Phalaris sp.
+907,179,III,277,492.3,100,Avena sp.,120,0,Avena sp.
+908,179,III,277,492.3,100,Hordeum vulgare ssp.,1,5,Hordeum vulgare
+909,179,III,277,492.3,100,Gramineae indet.,0,9,Gramineae indet.
+910,180,III,214,352.1,80,Adonis sp.,1,0,Adonis sp.
+911,180,III,214,352.1,80,Fumaria sp.,1,0,Fumaria sp.
+912,180,III,214,352.1,80,Cruciferae sp.,1,0,Cruciferae sp.
+913,180,III,214,352.1,80,Capparis sp.,4,0,Capparis sp.
+914,180,III,214,352.1,80,Pistacia cf. lentiscus,222,0,Pistacia cf. lentiscus
+915,180,III,214,352.1,80,Lens sp.,16,0,Lens sp.
+916,180,III,214,352.1,80,Medicago sp.,1,0,Medicago sp.
+917,180,III,214,352.1,80,Leguminosae,26,0,Leguminosae
+918,180,III,214,352.1,80,Leguminosae,1,0,Leguminosae
+919,180,III,214,352.1,80,Prunus amygdalus,101,0,Prunus amygdalus
+920,180,III,214,352.1,80,Pyrus amygdaliformis,32,0,Pyrus amygdaliformis
+921,180,III,214,352.1,80,Lithospermum arvense,2,0,Lithospermum
+922,180,III,214,352.1,80,cf. Colchicum/Polygonatum,13,0,cf. Colchicum/Polygonatum
+923,180,III,214,352.1,80,Avena sp.,68,0,Avena sp.
+924,180,III,214,352.1,80,Hordeum vulgare ssp.,0,5,Hordeum vulgare
+925,181,III,151,59,100,Cruciferae sp.,1,0,Cruciferae sp.
+926,181,III,151,59,100,Capparis sp.,1,0,Capparis sp.
+927,181,III,151,59,100,Malva parviflora,1,0,Malva parviflora
+928,181,III,151,59,100,Pistacia cf. lentiscus,140,0,Pistacia cf. lentiscus
+929,181,III,151,59,100,Lens sp.,2,0,Lens sp.
+930,181,III,151,59,100,Leguminosae,7,0,Leguminosae
+931,181,III,151,59,100,Prunus amygdalus,27,0,Prunus amygdalus
+932,181,III,151,59,100,Pyrus amygdaliformis,12,0,Pyrus amygdaliformis
+933,181,III,151,59,100,cf. Colchicum/Polygonatum,1,0,cf. Colchicum/Polygonatum
+934,181,III,151,59,100,Avena sp.,18,0,Avena sp.
+935,182,III,381,252.3,79,Adonis sp.,1,0,Adonis sp.
+936,182,III,381,252.3,79,Capparis sp.,3,0,Capparis sp.
+937,182,III,381,252.3,79,Malva parviflora,1,0,Malva parviflora
+938,182,III,381,252.3,79,Pistacia cf. lentiscus,144,0,Pistacia cf. lentiscus
+939,182,III,381,252.3,79,Lens sp.,11,0,Lens sp.
+940,182,III,381,252.3,79,Leguminosae,6,0,Leguminosae
+941,182,III,381,252.3,79,Prunus amygdalus,86,0,Prunus amygdalus
+942,182,III,381,252.3,79,Pyrus amygdaliformis,24,0,Pyrus amygdaliformis
+943,182,III,381,252.3,79,cf. Colchicum/Polygonatum,2,0,cf. Colchicum/Polygonatum
+944,182,III,381,252.3,79,Avena sp.,33,0,Avena sp.
+945,182,III,381,252.3,79,Hordeum vulgare ssp.,7,0,Hordeum vulgare
+946,183,III,143,79.4,100,Adonis sp.,2,0,Adonis sp.
+947,183,III,143,79.4,100,Fumaria sp.,3,0,Fumaria sp.
+948,183,III,143,79.4,100,Cruciferae sp.,2,0,Cruciferae sp.
+949,183,III,143,79.4,100,Capparis sp.,1,0,Capparis sp.
+950,183,III,143,79.4,100,Malva parviflora,1,0,Malva parviflora
+951,183,III,143,79.4,100,Pistacia cf. lentiscus,51,0,Pistacia cf. lentiscus
+952,183,III,143,79.4,100,Lens sp.,5,0,Lens sp.
+953,183,III,143,79.4,100,large Pisum sp.,2,0,large Pisum sp.
+954,183,III,143,79.4,100,Prunus amygdalus,50,0,Prunus amygdalus
+955,183,III,143,79.4,100,Pyrus amygdaliformis,21,0,Pyrus amygdaliformis
+956,183,III,143,79.4,100,Lithospermum arvense,1,0,Lithospermum
+957,183,III,143,79.4,100,Liliaceae sp.,3,0,Liliaceae sp.
+958,183,III,143,79.4,100,cf. Colchicum/Polygonatum,2,0,cf. Colchicum/Polygonatum
+959,183,III,143,79.4,100,Avena sp.,34,0,Avena sp.
+960,183,III,143,79.4,100,Hordeum vulgare ssp.,3,0,Hordeum vulgare
+961,184,III,450,433.2,75,Adonis sp.,3,0,Adonis sp.
+962,184,III,450,433.2,75,Fumaria sp.,1,0,Fumaria sp.
+963,184,III,450,433.2,75,Cruciferae sp.,2,0,Cruciferae sp.
+964,184,III,450,433.2,75,Capparis sp.,11,0,Capparis sp.
+965,184,III,450,433.2,75,Malva parviflora,1,0,Malva parviflora
+966,184,III,450,433.2,75,Pistacia cf. lentiscus,320,0,Pistacia cf. lentiscus
+967,184,III,450,433.2,75,Vteia/Lathyrus sp. no. I,3,0,Vicia
+968,184,III,450,433.2,75,Lens sp.,13,0,Lens sp.
+969,184,III,450,433.2,75,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+970,184,III,450,433.2,75,Leguminosae,7,0,Leguminosae
+971,184,III,450,433.2,75,Leguminosae,9,0,Leguminosae
+972,184,III,450,433.2,75,Leguminosae,3,0,Leguminosae
+973,184,III,450,433.2,75,Prunus amygdalus,130,0,Prunus amygdalus
+974,184,III,450,433.2,75,Lithospermum arvense,2,0,Lithospermum
+975,184,III,450,433.2,75,Liliaceae sp.,4,0,Liliaceae sp.
+976,184,III,450,433.2,75,Phalaris sp.,2,0,Phalaris sp.
+977,184,III,450,433.2,75,Avena sp.,92,0,Avena sp.
+978,184,III,450,433.2,75,Hordeum vulgare ssp.,6,0,Hordeum vulgare
+979,185,III,346,269.1,74,Fumaria sp.,2,0,Fumaria sp.
+980,185,III,346,269.1,74,Cruciferae sp.,4,0,Cruciferae sp.
+981,185,III,346,269.1,74,Capparis sp.,13,0,Capparis sp.
+982,185,III,346,269.1,74,Pistacia cf. lentiscus,135,0,Pistacia cf. lentiscus
+983,185,III,346,269.1,74,Lens sp.,6,0,Lens sp.
+984,185,III,346,269.1,74,Leguminosae,4,0,Leguminosae
+985,185,III,346,269.1,74,Prunus amygdalus,37,0,Prunus amygdalus
+986,185,III,346,269.1,74,Pyrus amygdaliformis,24,0,Pyrus amygdaliformis
+987,185,III,346,269.1,74,Calendula sp.,1,0,Calendula sp.
+988,185,III,346,269.1,74,Lithospermum arvense,7,0,Lithospermum
+989,185,III,346,269.1,74,Uthospennum dlicinale,1,0,Uthospennum dlicinale
+990,185,III,346,269.1,74,Liliaceae sp.,6,0,Liliaceae sp.
+991,185,III,346,269.1,74,Avena sp.,64,0,Avena sp.
+992,185,III,346,269.1,74,Hordeum vulgare ssp.,3,0,Hordeum vulgare
+993,186,III,277,212.6,73,Cruciferae sp.,3,0,Cruciferae sp.
+994,186,III,277,212.6,73,Capparis sp.,5,0,Capparis sp.
+995,186,III,277,212.6,73,Malva parviflora,1,0,Malva parviflora
+996,186,III,277,212.6,73,Pistacia cf. lentiscus,224,0,Pistacia cf. lentiscus
+997,186,III,277,212.6,73,Lens sp.,2,0,Lens sp.
+998,186,III,277,212.6,73,Lathyrus sp.,1,0,Lathyrus sp.
+999,186,III,277,212.6,73,Leguminosae,2,0,Leguminosae
+1000,186,III,277,212.6,73,Leguminosae,1,0,Leguminosae
+1001,186,III,277,212.6,73,Prunus amygdalus,72,0,Prunus amygdalus
+1002,186,III,277,212.6,73,Phalaris sp.,1,0,Phalaris sp.
+1003,186,III,277,212.6,73,Avena sp.,13,0,Avena sp.
+1004,186,III,277,212.6,73,Hordeum vulgare ssp.,0,1,Hordeum vulgare
+1005,186,III,277,212.6,73,seed indet.,0,14,seed indet.
+1006,187,III,277,250.3,78,Adonis sp.,1,0,Adonis sp.
+1007,187,III,277,250.3,78,Cruciferae sp.,7,0,Cruciferae sp.
+1008,187,III,277,250.3,78,Capparis sp.,1,0,Capparis sp.
+1009,187,III,277,250.3,78,Pistacia cf. lentiscus,122,0,Pistacia cf. lentiscus
+1010,187,III,277,250.3,78,Lens sp.,7,0,Lens sp.
+1011,187,III,277,250.3,78,Leguminosae,3,0,Leguminosae
+1012,187,III,277,250.3,78,Leguminosae,6,0,Leguminosae
+1013,187,III,277,250.3,78,Prunus amygdalus,99,0,Prunus amygdalus
+1014,187,III,277,250.3,78,Pyrus amygdaliformis,23,0,Pyrus amygdaliformis
+1015,187,III,277,250.3,78,Lithospermum arvense,2,0,Lithospermum
+1016,187,III,277,250.3,78,Liliaceae sp.,2,0,Liliaceae sp.
+1017,187,III,277,250.3,78,Avena sp.,36,0,Avena sp.
+1018,187,III,277,250.3,78,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+1019,188,III,277,372.5,81,Adonis sp.,2,0,Adonis sp.
+1020,188,III,277,372.5,81,Pistacia cf. lentiscus,227,0,Pistacia cf. lentiscus
+1021,188,III,277,372.5,81,Lens sp.,6,0,Lens sp.
+1022,188,III,277,372.5,81,Leguminosae,0,6,Leguminosae
+1023,188,III,277,372.5,81,Prunus amygdalus,1,0,Prunus amygdalus
+1024,188,III,277,372.5,81,Pyrus amygdaliformis,37,0,Pyrus amygdaliformis
+1025,188,III,277,372.5,81,cf. Colchicum/Polygonatum,1,0,cf. Colchicum/Polygonatum
+1026,188,III,277,372.5,81,Avena sp.,4,0,Avena sp.
+1027,188,III,277,372.5,81,Hordeum vulgare ssp.,3,0,Hordeum vulgare
+1028,188,III,277,372.5,81,culm node indet.,1,0,culm node
+1029,189,III,346,210,100,Adonis sp.,1,0,Adonis sp.
+1030,189,III,346,210,100,Fumaria sp.,1,0,Fumaria sp.
+1031,189,III,346,210,100,Cruciferae sp.,1,0,Cruciferae sp.
+1032,189,III,346,210,100,Capparis sp.,1,0,Capparis sp.
+1033,189,III,346,210,100,Polygonum sp.,2,0,Polygonatum
+1034,189,III,346,210,100,Pistacia cf. lentiscus,359,0,Pistacia cf. lentiscus
+1035,189,III,346,210,100,Lens sp.,10,0,Lens sp.
+1036,189,III,346,210,100,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+1037,189,III,346,210,100,Leguminosae,8,0,Leguminosae
+1038,189,III,346,210,100,Leguminosae,5,0,Leguminosae
+1039,189,III,346,210,100,Prunus amygdalus,80,0,Prunus amygdalus
+1040,189,III,346,210,100,Pyrus amygdaliformis,16,2,Pyrus amygdaliformis
+1041,189,III,346,210,100,Lithospermum arvense,3,0,Lithospermum
+1042,189,III,346,210,100,Celtis cf. tournifortii,1,0,Celtis cf. tournifortii
+1043,189,III,346,210,100,Phalaris sp.,1,0,Phalaris sp.
+1044,189,III,346,210,100,Avena sp.,61,0,Avena sp.
+1045,189,III,346,210,100,Hordeum vulgare ssp.,2,0,Hordeum vulgare
+1046,190,III,312,267.9,89,Cruciferae sp.,6,0,Cruciferae sp.
+1047,190,III,312,267.9,89,Capparis sp.,1,0,Capparis sp.
+1048,190,III,312,267.9,89,Pistacia cf. lentiscus,343,0,Pistacia cf. lentiscus
+1049,190,III,312,267.9,89,Lens sp.,3,0,Lens sp.
+1050,190,III,312,267.9,89,Medicago sp.,1,0,Medicago sp.
+1051,190,III,312,267.9,89,Leguminosae,3,0,Leguminosae
+1052,190,III,312,267.9,89,Leguminosae,2,0,Leguminosae
+1053,190,III,312,267.9,89,Prunus amygdalus,83,0,Prunus amygdalus
+1054,190,III,312,267.9,89,Pyrus amygdaliformis,11,0,Pyrus amygdaliformis
+1055,190,III,312,267.9,89,Avena sp.,29,0,Avena sp.
+1056,190,III,312,267.9,89,Hordeum vulgare ssp.,0,3,Hordeum vulgare
+1057,191,III,381,449.5,87,Cruciferae sp.,6,0,Cruciferae sp.
+1058,191,III,381,449.5,87,Capparis sp.,1,0,Capparis sp.
+1059,191,III,381,449.5,87,Pistacia cf. lentiscus,906,0,Pistacia cf. lentiscus
+1060,191,III,381,449.5,87,Lens sp.,2,0,Lens sp.
+1061,191,III,381,449.5,87,Medicago sp.,2,0,Medicago sp.
+1062,191,III,381,449.5,87,Leguminosae,5,0,Leguminosae
+1063,191,III,381,449.5,87,Leguminosae,1,0,Leguminosae
+1064,191,III,381,449.5,87,Prunus amygdalus,133,0,Prunus amygdalus
+1065,191,III,381,449.5,87,Pyrus amygdaliformis,7,0,Pyrus amygdaliformis
+1066,191,III,381,449.5,87,Avena sp.,114,0,Avena sp.
+1067,191,III,381,449.5,87,Hordeum vulgare ssp.,2,11,Hordeum vulgare
+1068,192,III,346,409.5,86,Adonis sp.,1,0,Adonis sp.
+1069,192,III,346,409.5,86,Fumaria sp.,2,0,Fumaria sp.
+1070,192,III,346,409.5,86,Cruciferae sp.,11,0,Cruciferae sp.
+1071,192,III,346,409.5,86,Capparis sp.,2,0,Capparis sp.
+1072,192,III,346,409.5,86,Polygonum sp.,3,0,Polygonatum
+1073,192,III,346,409.5,86,Malva parviflora,1,0,Malva parviflora
+1074,192,III,346,409.5,86,Vitis vinifera ssp. sylvestris,1,0,Vitis vinifera ssp. sylvestris
+1075,192,III,346,409.5,86,Pistacia cf. lentiscus,808,0,Pistacia cf. lentiscus
+1076,192,III,346,409.5,86,Lens sp.,18,0,Lens sp.
+1077,192,III,346,409.5,86,Medicago sp.,1,0,Medicago sp.
+1078,192,III,346,409.5,86,Leguminosae,1,0,Leguminosae
+1079,192,III,346,409.5,86,Prunus amygdalus,170,0,Prunus amygdalus
+1080,192,III,346,409.5,86,Pyrus amygdaliformis,10,0,Pyrus amygdaliformis
+1081,192,III,346,409.5,86,Alkanna sp.,3,0,Alkanna sp.
+1082,192,III,346,409.5,86,Liliaceae sp.,3,0,Liliaceae sp.
+1083,192,III,346,409.5,86,cf. Colchicum/Polygonatum,1,0,cf. Colchicum/Polygonatum
+1084,192,III,346,409.5,86,Phalaris sp.,1,0,Phalaris sp.
+1085,192,III,346,409.5,86,Avena sp.,349,0,Avena sp.
+1086,192,III,346,409.5,86,Hordeum vulgare ssp.,1,19,Hordeum vulgare
+1087,193,III,30,28.2,100,Pistacia cf. lentiscus,222,0,Pistacia cf. lentiscus
+1088,193,III,30,28.2,100,Prunus amygdalus,20,0,Prunus amygdalus
+1089,193,III,30,28.2,100,Pyrus amygdaliformis,2,0,Pyrus amygdaliformis
+1090,193,III,30,28.2,100,Alkanna sp.,1,0,Alkanna sp.
+1091,193,III,30,28.2,100,Monocotyledonae capsule,1,0,Monocotyledonae capsule
+1092,193,III,30,28.2,100,Avena sp.,11,0,Avena sp.
+1093,193,III,30,28.2,100,Hordeum vulgare ssp.,1,0,Hordeum vulgare
+1094,194,III,28,57.8,100,Cruciferae sp.,3,0,Cruciferae sp.
+1095,194,III,28,57.8,100,Capparis sp.,1,0,Capparis sp.
+1096,194,III,28,57.8,100,Malva parviflora,1,0,Malva parviflora
+1097,194,III,28,57.8,100,Pistacia cf. lentiscus,522,0,Pistacia cf. lentiscus
+1098,194,III,28,57.8,100,Lathyrus sp.,1,0,Lathyrus sp.
+1099,194,III,28,57.8,100,Lens sp.,10,0,Lens sp.
+1100,194,III,28,57.8,100,Leguminosae,9,0,Leguminosae
+1101,194,III,28,57.8,100,Prunus amygdalus,38,0,Prunus amygdalus
+1102,194,III,28,57.8,100,Pyrus amygdaliformis,6,0,Pyrus amygdaliformis
+1103,194,III,28,57.8,100,Alkanna sp.,2,0,Alkanna sp.
+1104,194,III,28,57.8,100,Avena sp.,213,0,Avena sp.
+1105,194,III,28,57.8,100,Hordeum vulgare ssp.,1,18,Hordeum vulgare
+1106,195,III,440,197.3,100,Prunus amygdalus,30,0,Prunus amygdalus
+1107,195,III,440,197.3,100,no flot,0,0,no flot
+1108,196,III,554,213.9,81,Fumaria sp.,1,0,Fumaria sp.
+1109,196,III,554,213.9,81,Cruciferae sp.,1,0,Cruciferae sp.
+1110,196,III,554,213.9,81,Pistacia cf. lentiscus,85,0,Pistacia cf. lentiscus
+1111,196,III,554,213.9,81,Lens sp.,5,0,Lens sp.
+1112,196,III,554,213.9,81,Pisum/Vicia sp.,1,0,Pisum/Vicia sp.
+1113,196,III,554,213.9,81,Leguminosae,10,0,Leguminosae
+1114,196,III,554,213.9,81,Prunus amygdalus,26,0,Prunus amygdalus
+1115,196,III,554,213.9,81,Pyrus amygdaliformis,12,0,Pyrus amygdaliformis
+1116,196,III,554,213.9,81,Galium sp.,1,0,Galium sp.
+1117,196,III,554,213.9,81,Lithospermum arvense,5,0,Lithospermum
+1118,196,III,554,213.9,81,Avena sp.,84,0,Avena sp.
+1119,196,III,554,213.9,81,Hordeum vulgare ssp.,5,0,Hordeum vulgare
+1120,196,III,554,213.9,81,seed indet.,0,8,seed indet.
+1121,197,III,226,81.6,100,Prunus amygdalus,24,0,Prunus amygdalus
+1122,198,III,208,98.5,100,Pistacia cf. lentiscus,27,0,Pistacia cf. lentiscus
+1123,198,III,208,98.5,100,Lens sp.,2,0,Lens sp.
+1124,198,III,208,98.5,100,Leguminosae,2,0,Leguminosae
+1125,198,III,208,98.5,100,Leguminosae,1,0,Leguminosae
+1126,198,III,208,98.5,100,Prunus amygdalus,11,0,Prunus amygdalus
+1127,198,III,208,98.5,100,Pyrus amygdaliformis,13,0,Pyrus amygdaliformis
+1128,198,III,208,98.5,100,Calendula sp.,1,0,Calendula sp.
+1129,198,III,208,98.5,100,Alkanna sp.,1,0,Alkanna sp.
+1130,198,III,208,98.5,100,Avena sp.,60,0,Avena sp.
+1131,198,III,208,98.5,100,Hordeum vulgare ssp.,5,0,Hordeum vulgare
+1132,199,II/III,242,59.6,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+1133,199,II/III,242,59.6,100,Leguminosae,2,0,Leguminosae
+1134,199,II/III,242,59.6,100,Prunus amygdalus,5,0,Prunus amygdalus
+1135,199,II/III,242,59.6,100,Lithospermum arvense,1,0,Lithospermum
+1136,199,II/III,242,59.6,100,cf. Colchicum/Polygonatum,2,0,cf. Colchicum/Polygonatum
+1137,199,II/III,242,59.6,100,Avena sp.,4,0,Avena sp.
+1138,199,II/III,242,59.6,100,culm node indet.,1,0,culm node
+1139,200,II/III,208,54,100,Pistacia cf. lentiscus,0,3,Pistacia cf. lentiscus
+1140,200,II/III,208,54,100,Leguminosae,1,0,Leguminosae
+1141,200,II/III,208,54,100,Prunus amygdalus,12,0,Prunus amygdalus
+1142,200,II/III,208,54,100,Pyrus amygdaliformis,2,12,Pyrus amygdaliformis
+1143,200,II/III,208,54,100,Lithospermum arvense,1,0,Lithospermum
+1144,201,II/III,141,19.7,100,Pistacia cf. lentiscus,0,3,Pistacia cf. lentiscus
+1145,201,II/III,141,19.7,100,Prunus amygdalus,2,0,Prunus amygdalus
+1146,201,II/III,141,19.7,100,Lithospermum arvense,1,25,Lithospermum
+1147,202,II/III,277,67.4,100,Pistacia cf. lentiscus,0,1,Pistacia cf. lentiscus
+1148,202,II/III,277,67.4,100,Lens sp.,2,0,Lens sp.
+1149,202,II/III,277,67.4,100,Leguminosae,1,0,Leguminosae
+1150,202,II/III,277,67.4,100,Prunus amygdalus,3,0,Prunus amygdalus
+1151,202,II/III,277,67.4,100,Alkanna sp.,1,0,Alkanna sp.
+1152,203,I/III,366,64.7,100,Malva parviflora,1,0,Malva parviflora
+1153,203,I/III,366,64.7,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+1154,203,I/III,366,64.7,100,Lens sp.,1,0,Lens sp.
+1155,203,I/III,366,64.7,100,Prunus amygdalus,2,0,Prunus amygdalus
+1156,203,I/III,366,64.7,100,Alkanna sp.,1,0,Alkanna sp.
+1157,203,I/III,366,64.7,100,Avena sp.,5,0,Avena sp.
+1158,204,I/III,312,17.7,100,Prunus amygdalus,0,1,Prunus amygdalus
+1159,204,I/III,312,17.7,100,Submitted for C14 dating,0,0,Submitted for C14 dating
+1160,205,II,381,19.7,100,Pistacia cf. lentiscus,3,0,Pistacia cf. lentiscus
+1161,205,II,381,19.7,100,Leguminosae,1,0,Leguminosae
+1162,205,II,381,19.7,100,Prunus amygdalus,2,0,Prunus amygdalus
+1163,205,II,381,19.7,100,Lithospermum arvense,8,0,Lithospermum
+1164,205,II,381,19.7,100,Alkanna sp.,8,0,Alkanna sp.
+1165,205,II,381,19.7,100,Avena sp.,0,1,Avena sp.
+1166,206,Ib,277,9.8,100,Leguminosae,1,0,Leguminosae
+1167,206,Ib,277,9.8,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+1168,206,Ib,277,9.8,100,Lithospermum arvense,12,0,Lithospermum
+1169,206,Ib,277,9.8,100,Alkanna sp.,9,0,Alkanna sp.
+1170,206,Ib,277,9.8,100,Avena sp.,1,0,Avena sp.
+1171,207,Ib,298,6.7,100,Lithospermum arvense,1,0,Lithospermum
+1172,207,Ib,298,6.7,100,Alkanna sp.,5,0,Alkanna sp.
+1173,208,Ib,797,10.1,100,Lathyrus sp.,1,0,Lathyrus sp.
+1174,208,Ib,797,10.1,100,Pyrus amygdaliformis,1,0,Pyrus amygdaliformis
+1175,208,Ib,797,10.1,100,Lithospermum arvense,179,0,Lithospermum
+1176,209,Ib,624,2.2,100,Lithospermum arvense,108,0,Lithospermum
+1177,209,Ib,624,2.2,100,Anchusa sp.,1,0,Anchusa sp.
+1178,209,Ib,624,2.2,100,Alkanna sp.,49,0,Alkanna sp.
+1179,210,0,244,0,0,0,0,0,0
+1180,211,Ib,15,1.1,100,Lithospermum arvense,41,0,Lithospermum
+1181,211,Ib,15,1.1,100,Anchusa sp.,5,0,Anchusa sp.
+1182,211,Ib,15,1.1,100,Alkanna sp.,49,0,Alkanna sp.
+1183,212,Ib,488,3.6,100,Lithospermum arvense,301,0,Lithospermum
+1184,212,Ib,488,3.6,100,Anchusa sp.,1,0,Anchusa sp.
+1185,212,Ib,488,3.6,100,Alkanna sp.,11,0,Alkanna sp.
+1186,213,Ib,107,0.8,100,Pistacia cf. lentiscus,1,0,Pistacia cf. lentiscus
+1187,213,Ib,107,0.8,100,Lithospermum arvense,17,0,Lithospermum
+1188,213,Ib,107,0.8,100,Anchusa sp.,6,0,Anchusa sp.
+1189,213,Ib,107,0.8,100,Alkanna sp.,24,0,Alkanna sp.
+1190,214,Ib,391,1.4,100,Lithospermum arvense,72,0,Lithospermum
+1191,214,Ib,391,1.4,100,Alkanna sp.,91,0,Alkanna sp.
+1192,215,Ib,77,1.3,100,Lithospermum arvense,93,0,Lithospermum
+1193,215,Ib,77,1.3,100,Alkanna sp.,113,0,Alkanna sp.
+1194,216,Ib,90,2.5,100,Pistacia cf. lentiscus,2,0,Pistacia cf. lentiscus
+1195,216,Ib,90,2.5,100,Lithospermum arvense,881,0,Lithospermum
+1196,216,Ib,90,2.5,100,Anchusa sp.,3,0,Anchusa sp.
+1197,216,Ib,90,2.5,100,Alkanna sp.,13,0,Alkanna sp.
+1198,217,Ib,179,4,100,Pistacia cf. lentiscus,0,3,Pistacia cf. lentiscus
+1199,217,Ib,179,4,100,Lithospermum arvense,576,0,Lithospermum
+1200,217,Ib,179,4,100,Anchusa sp.,1,0,Anchusa sp.
+1201,217,Ib,179,4,100,Alkanna sp.,278,0,Alkanna sp.
+1202,218,Ia,213,0.2,100,Lithospermum arvense,25,0,Lithospermum
+1203,218,Ia,213,0.2,100,Alkanna sp.,46,0,Alkanna sp.
+1204,219,Ia,672,0.8,100,Lithospermum arvense,35,0,Lithospermum
+1205,219,Ia,672,0.8,100,Anchusa sp.,1,0,Anchusa sp.
+1206,219,Ia,672,0.8,100,Alkanna sp.,203,0,Alkanna sp.
+1207,220,Ia,213,1.2,100,Lithospermum arvense,99,0,Lithospermum
+1208,220,Ia,213,1.2,100,Alkanna sp.,313,0,Alkanna sp.
+1209,221,Ia,315,1.6,100,Lithospermum arvense,148,0,Lithospermum
+1210,221,Ia,315,1.6,100,Alkanna sp.,284,0,Alkanna sp.
+1211,222,Ia,316,2,100,Lithospermum arvense,49,0,Lithospermum
+1212,222,Ia,316,2,100,Alkanna sp.,559,0,Alkanna sp.
+1213,223,Ia,693,3.5,100,Lithospermum arvense,31,0,Lithospermum
+1214,223,Ia,693,3.5,100,Alkanna sp.,1088,0,Alkanna sp.
+1215,224,Ia,561,2.7,100,Lithospermum arvense,167,0,Lithospermum
+1216,224,Ia,561,2.7,100,Alkanna sp.,747,0,Alkanna sp.
+1217,225,Ia,416,3.4,100,Lithospermum arvense,159,0,Lithospermum
+1218,225,Ia,416,3.4,100,Alkanna sp.,1023,0,Alkanna sp.
+1219,226,Ia,866,5.9,100,Lithospermum arvense,248,0,Lithospermum
+1220,226,Ia,866,5.9,100,Anchusa sp.,1,0,Anchusa sp.
+1221,226,Ia,866,5.9,100,Alkanna sp.,2001,0,Alkanna sp.
+1222,227,Ia,146,0.7,100,Lithospermum arvense,7,0,Lithospermum
+1223,227,Ia,146,0.7,100,Alkanna sp.,152,0,Alkanna sp.
