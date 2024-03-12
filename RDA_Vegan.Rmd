@@ -75,6 +75,10 @@ Fauna_FAS <- read.csv(here("data","Fauna_FAS_grouped_NISP.csv"),colClasses = c(u
   clean_names() %>% 
   mutate(trench="FAS")
 
+Fauna_Paralia <- read.csv(here("data","Fauna_Paralia_grouped_NISP.csv"),colClasses = c(unit="character")) %>% 
+  clean_names() %>% 
+  rename(fishes_non_tuna=fish_indet)
+
 Molluscs <- read.csv(here("data","Mollusc_data.csv"),colClasses = c(unit="character")) %>% 
   clean_names() %>% 
   unite("trenchunit",trench,unit,sep="_")
@@ -82,14 +86,14 @@ Molluscs <- read.csv(here("data","Mollusc_data.csv"),colClasses = c(unit="charac
 
 
 
-Fauna <- bind_rows(Fauna_FAN,Fauna_FAS) %>% 
+Fauna <- bind_rows(Fauna_FAN,Fauna_FAS,Fauna_Paralia) %>% 
   unite("trenchunit",trench,unit,sep="_") %>% 
   mutate(across(everything(), ~replace_na(.x, 0))) %>% 
   filter(if_any(where(is.numeric), ~ .x > 0)) %>% #remove empty rows
   arrange(trenchunit) %>% 
   left_join(Molluscs %>% rename(molluscs=nisp) %>% select(molluscs,trenchunit),by = "trenchunit")
 
-rm(Fauna_FAN,Fauna_FAS,Molluscs)
+rm(Fauna_FAN,Fauna_FAS,Fauna_Paralia,Molluscs)
 ```
 
 ## Botanical
@@ -129,7 +133,7 @@ Bot <- read.csv(here("data","Botanical_data.csv")) %>%
   filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN")
 ```
 
-# Faunal analysis
+## Filtering Data
 ### Filtered Fauna
 ```{r}
 Filtered_Fauna <- Fauna %>%
@@ -165,50 +169,7 @@ Filtered_D18O_Fauna <- D18O %>%
 
 
 ```
-###############################
-DONT NEED TO CHANGE ANYTHING UP TO HERE 
-##############################
 
-RDA analysis will tell you whether and if yes how the variability (inertia) of the faunal or botanical data is correlated with or explained by the environmental data. You can then play around with the environmental factors using the equations or you can pick out the most important ones when running all factors and show in more detail how they relate to the faunal and botanical species using the scatterplots and correlation tests (R,R2 and p). 
-Using ths CorrsFauna or CorrsBot dataframe you can look at what species are mostly affected by environmental change and also highlight those using scatterplots.
-
-This should give you enough to discuss the impact of climatic variability or temperature extremes onto human subsistence at Franchthi.
-
-## CCA - not as applicable as RDA as we have quantifiable environmental data
-```{r}
-# Now apply the cca function
-All_CCA <- cca(Filtered_Fauna,Filtered_D18O_Fauna)
-All_CCA
-plot(All_CCA)
-
-MinMax_CCA <- cca(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
-MinMax_CCA
-plot(MinMax_CCA)
-```
-
-## RDA
-```{r}
-All_RDA <- rda(Filtered_Fauna,Filtered_D18O_Fauna)
-All_RDA
-plot(All_RDA)
-
-
-MinMax_RDA <- rda(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
-MinMax_RDA
-plot(MinMax_RDA)
-
-SummerSE_RDA <- rda(Filtered_Fauna ~ se + Summer_Temp, data=Filtered_D18O_Fauna)
-SummerSE_RDA
-plot(SummerSE_RDA)
-
-WinterSE_RDA <- rda(Filtered_Fauna ~ se + Winter_Temp, data=Filtered_D18O_Fauna)
-WinterSE_RDA
-plot(WinterSE_RDA)
-
-```
-
-
-# Botanical analysis
 ## Filtering Bot Data
 ```{r}
 Filtered_Bot <- Bot %>% 
@@ -254,7 +215,129 @@ Filtered_D18O_Bot <- D18O %>%
 ```
 
 
-## CCA - not as applicable as RDA as we have quantifiable environmental data
+## Joining and correlating Data
+### Fauna Join and Correlation
+#### Fauna Data wrangle
+```{r}
+Joined_D18O_Fauna <- cbind(Filtered_D18O_Fauna,Filtered_Fauna) %>% 
+  mutate(trenchunit=rownames(.)) %>% 
+  left_join(D18O_WSr,by="trenchunit") %>% #adding the incomplete seasonal data
+  select(trenchunit,range_Summer,range_Winter,se_Summer,se_Winter,everything()) %>%
+  pivot_longer(names_to = "species", values_to = "nisp",cols = 10:last_col()) %>%  
+  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
+  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+  
+```
+
+
+#### Fauna Correlations
+```{r}
+# Split data by species and environmental data to perform correlations
+Corrs_Fauna <- Joined_D18O_Fauna %>% 
+  group_by(species, env_data) %>%
+  nest() %>%
+  mutate(correlation = map(data, ~ tryCatch({
+    cor.test(.x$nisp, .x$env_values, method = "pearson")
+  }, error = function(e) NULL))) %>%
+  # Correctly filter out NULL results outside of mutate
+  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
+  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
+  select(-data, -correlation) %>%
+  unnest(tidy_cor) %>%
+  mutate(species_env = paste(species, env_data, sep = "_vs_"),
+         r.squared = estimate^2) %>%
+  select(species_env, estimate, p.value, r.squared) # This makes many warning but it's ok. Lots of NAs are being created, that's why.
+
+```
+
+
+
+### Botany Join and Correlation
+### Botany Data wrangle
+```{r}
+Joined_D18O_Bot <- cbind(Filtered_D18O_Bot,Filtered_Bot) %>% 
+  mutate(trenchunit=rownames(.)) %>% 
+  pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%  
+  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 1:4) %>% 
+  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+```
+
+### Botany Correlations
+```{r}
+# Split data by species and environmental data to perform correlations. LOTS OF WARNINGS BUT OK
+Corrs_Bot <- Joined_D18O_Bot %>%
+    filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
+  group_by(species, env_data) %>%
+  nest() %>%
+  mutate(correlation = map(data, ~ tryCatch({
+    cor.test(.x$nisp, .x$env_values, method = "pearson")
+  }, error = function(e) NULL))) %>% # This makes many warning but it's ok. Lots of NAs are being created, that's why.
+  # Correctly filter out NULL results outside of mutate
+  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
+  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
+  select(-data, -correlation) %>%
+  unnest(tidy_cor) %>%
+  mutate(species_env = paste(species, env_data, sep = "_vs_"),
+         r.squared = estimate^2) %>%
+  select(species_env, estimate, p.value, r.squared) 
+
+```
+
+
+##########
+
+
+
+###############################
+DONT NEED TO CHANGE ANYTHING UP TO HERE 
+##############################
+
+RDA analysis will tell you whether and if yes how the variability (inertia) of the faunal or botanical data is correlated with or explained by the environmental data. You can then play around with the environmental factors using the equations or you can pick out the most important ones when running all factors and show in more detail how they relate to the faunal and botanical species using the scatterplots and correlation tests (R,R2 and p). 
+Using ths CorrsFauna or CorrsBot dataframe you can look at what species are mostly affected by environmental change and also highlight those using scatterplots.
+
+This should give you enough to discuss the impact of climatic variability or temperature extremes onto human subsistence at Franchthi.
+
+
+# CCA and RDA
+## Faunal analysis
+### CCA - not as applicable as RDA as we have quantifiable environmental data
+```{r}
+# Now apply the cca function
+All_CCA <- cca(Filtered_Fauna,Filtered_D18O_Fauna)
+All_CCA
+plot(All_CCA)
+
+MinMax_CCA <- cca(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
+MinMax_CCA
+plot(MinMax_CCA)
+```
+
+### RDA
+```{r}
+All_RDA <- rda(Filtered_Fauna,Filtered_D18O_Fauna)
+All_RDA
+plot(All_RDA)
+
+
+MinMax_RDA <- rda(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
+MinMax_RDA
+plot(MinMax_RDA)
+
+SummerSE_RDA <- rda(Filtered_Fauna ~ se + Summer_Temp, data=Filtered_D18O_Fauna)
+SummerSE_RDA
+plot(SummerSE_RDA)
+
+WinterSE_RDA <- rda(Filtered_Fauna ~ se + Winter_Temp, data=Filtered_D18O_Fauna)
+WinterSE_RDA
+plot.cca(WinterSE_RDA)
+
+```
+
+
+## Botanical analysis
+
+
+### CCA - not as applicable as RDA as we have quantifiable environmental data
 ```{r}
 # Now apply the cca function
 All_CCA <- cca(Filtered_Bot,Filtered_D18O_Bot)
@@ -266,7 +349,7 @@ MinMax_CCA
 plot(MinMax_CCA)
 ```
 
-## RDA
+### RDA
 ```{r}
 All_RDA <- rda(Filtered_Bot,Filtered_D18O_Bot)
 All_RDA
@@ -289,42 +372,10 @@ plot(WinterSE_RDA)
 ```
 
 
-# Scatterplots
+
+#Scatterplots
 ## Fauna
-### Fauna Data wrangle
-```{r}
-Joined_D18O_Fauna <- cbind(Filtered_D18O_Fauna,Filtered_Fauna) %>% 
-  mutate(trenchunit=rownames(.)) %>% 
-  left_join(D18O_WSr,by="trenchunit") %>% #adding the incomplete seasonal data
-  select(trenchunit,range_Summer,range_Winter,se_Summer,se_Winter,everything()) %>%
-  pivot_longer(names_to = "species", values_to = "nisp",cols = 10:26) %>%  
-  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
-  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
-  
-```
 
-
-### Fauna Correlations
-```{r}
-# Split data by species and environmental data to perform correlations
-Corrs_Fauna <- Joined_D18O_Fauna %>% 
-  group_by(species, env_data) %>%
-  nest() %>%
-  mutate(correlation = map(data, ~ tryCatch({
-    cor.test(.x$nisp, .x$env_values, method = "pearson")
-  }, error = function(e) NULL))) %>%
-  # Correctly filter out NULL results outside of mutate
-  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
-  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
-  select(-data, -correlation) %>%
-  unnest(tidy_cor) %>%
-  mutate(species_env = paste(species, env_data, sep = "_vs_"),
-         r.squared = estimate^2) %>%
-  select(species_env, estimate, p.value, r.squared) # This makes many warning but it's ok. Lots of NAs are being created, that's why.
-
-```
-
-### Fauna Plots
 Based on the Corrs_Fauna data you can see which species are most correlated to which environmental proxies. Just change the name in the second line.
 Based on the RDA data you can see which environmental factors might be most important.
 
@@ -381,37 +432,6 @@ Joined_D18O_Fauna %>%
 ```
 
 ## Botany 
-### Botany Data wrangle
-```{r}
-Joined_D18O_Bot <- cbind(Filtered_D18O_Bot,Filtered_Bot) %>% 
-  mutate(trenchunit=rownames(.)) %>% 
-  pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%  
-  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 1:4) %>% 
-  left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
-```
-
-### Botany Correlations
-```{r}
-# Split data by species and environmental data to perform correlations. LOTS OF WARNINGS BUT OK
-Corrs_Bot <- Joined_D18O_Bot %>%
-    filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
-  group_by(species, env_data) %>%
-  nest() %>%
-  mutate(correlation = map(data, ~ tryCatch({
-    cor.test(.x$nisp, .x$env_values, method = "pearson")
-  }, error = function(e) NULL))) %>% # This makes many warning but it's ok. Lots of NAs are being created, that's why.
-  # Correctly filter out NULL results outside of mutate
-  filter(map_lgl(correlation, ~ !is.null(.x))) %>%
-  mutate(tidy_cor = map(correlation, broom::tidy)) %>%
-  select(-data, -correlation) %>%
-  unnest(tidy_cor) %>%
-  mutate(species_env = paste(species, env_data, sep = "_vs_"),
-         r.squared = estimate^2) %>%
-  select(species_env, estimate, p.value, r.squared) 
-
-```
-
-### Botany Plots
 Based on the Corrs_Bot data you can see which species are most correlated to which environmental proxies. Just change the name in the second line.
 Based on the RDA data you can see which environmental factors might be most important.
 
