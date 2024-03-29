@@ -59,7 +59,7 @@ ordiplot(All_RDA, scaling = 1, type = "text")
 # Scaling 2: Angles between variables reflect their correlation
 ordiplot(All_RDA, scaling = 2, type = "text")
 
-MinMax_RDA <- rda(Filtered_Fauna ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Fauna)
+MinMax_RDA <- rda(Filtered_Fauna ~ se+range+ + Winter_Temp, data=Filtered_D18O_Fauna)
 MinMax_RDA
 ordiplot(MinMax_RDA)
 
@@ -75,19 +75,6 @@ ordiplot(WinterSE_RDA)
 
 
 ## Botanical analysis
-### CCA - not as applicable as RDA as we have quantifiable environmental data
-```{r}
-# Now apply the cca function
-All_CCA <- cca(Filtered_Bot,Filtered_D18O_Bot)
-All_CCA
-ordiplot(All_CCA)
-
-MinMax_CCA <- cca(Filtered_Bot ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_Bot)
-MinMax_CCA
-ordiplot(MinMax_CCA)
-```
-
-### RDA
 ```{r}
 All_RDA <- rda(Filtered_Bot,Filtered_D18O_Bot)
 All_RDA
@@ -98,7 +85,7 @@ MinMax_RDA <- rda(Filtered_Bot ~ Summer_Temp + Winter_Temp, data=Filtered_D18O_B
 MinMax_RDA
 ordiplot(MinMax_RDA)
 
-SummerSE_RDA <- rda(Filtered_Bot ~ se + Summer_Temp, data=Filtered_D18O_Bot)
+SummerSE_RDA <- rda(Filtered_Bot ~ se + range+Summer_Temp, data=Filtered_D18O_Bot)
 SummerSE_RDA
 ordiplot(SummerSE_RDA)
 
@@ -120,49 +107,50 @@ Based on the RDA data you can see which environmental factors might be most impo
 ### By Environmental data
 ```{r}
 Joined_D18O_Fauna %>% 
-  filter(env_data=="se_Winter") %>% 
-  ggplot()+
-  aes(env_values,nisp)+
-    geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
-  geom_point(aes(col=chronology))+
-  scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Winter Temp", x="Environmental Values", y="Normalised NISP", col="")+
-  facet_wrap(~species,scales = "free")
-
-Joined_D18O_Fauna %>% 
-  filter(env_data=="Summer_Temp") %>% 
+  filter(env_data=="Winter_Temp") %>% 
   ggplot()+
   aes(env_values,nisp)+
   geom_point(aes(col=chronology))+
   scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Summer Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Winter Minimum", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~species,scales = "free")
 
 Joined_D18O_Fauna %>% 
   filter(env_data=="range") %>% 
   ggplot()+
   aes(env_values,nisp)+
+    geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
   geom_point(aes(col=chronology))+
   scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Temp Range", x="Environmental Values", y="Normalised NISP", col="")+
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="By annual range", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~species,scales = "free")
+
+Joined_D18O_Fauna %>% 
+  filter(env_data=="se") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Variability within unit", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
 ```
 
 
 ### By Animal
 ```{r}
 Joined_D18O_Fauna %>% 
-  filter(species=="med_ungulate") %>% 
+  filter(species=="hare") %>% 
   ggplot()+
   aes(env_values,nisp)+
   geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
   geom_point(aes(col=chronology))+
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
   scale_color_manual(values = chron_colours) + 
-  labs(title="Medium ungulate", x="Environmental Values", y="Normalised NISP", col="")+
+  labs(title="Hare", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~env_data,scales = "free")
 
 
@@ -175,15 +163,6 @@ Based on the RDA data you can see which environmental factors might be most impo
 
 ### By Environmental data
 ```{r}
-Joined_D18O_Bot %>% 
-  filter(env_data=="Winter_Temp") %>% 
-  ggplot()+
-  aes(env_values,nisp)+
-  geom_point(aes(col=chronology))+
-  # scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Winter Temp", x="Environmental Values", y="Normalised NISP", col="")+
-  facet_wrap(~species,scales = "free")
 
 Joined_D18O_Bot %>% 
   filter(env_data=="Summer_Temp") %>% 
@@ -191,8 +170,19 @@ Joined_D18O_Bot %>%
   aes(env_values,nisp)+
   geom_point(aes(col=chronology))+
   scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Summer Temp", x="Environmental Values", y="Normalised NISP", col="")+
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Summer maximum", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
+
+Joined_D18O_Bot %>% 
+  filter(env_data=="range_Winter") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) + 
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="By Winter range", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~species,scales = "free")
 
 Joined_D18O_Bot %>% 
@@ -201,9 +191,20 @@ Joined_D18O_Bot %>%
   aes(env_values,nisp)+
   geom_point(aes(col=chronology))+
   scale_color_manual(values = chron_colours) + 
-  stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-    labs(title="Temp Range", x="Environmental Values", y="Normalised NISP", col="")+
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="By annual range", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~species,scales = "free")
+
+Joined_D18O_Bot %>% 
+  filter(env_data=="se") %>% 
+  ggplot()+
+  aes(env_values,nisp)+
+  geom_point(aes(col=chronology))+
+  scale_color_manual(values = chron_colours) +
+  stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
+    labs(title="Variability within unit", x="Environmental Values", y="Normalised NISP", col="")+
+  facet_wrap(~species,scales = "free")
+
 ```
 
 
@@ -211,16 +212,16 @@ Joined_D18O_Bot %>%
 ### By Plant
 ```{r}
 Joined_D18O_Bot %>% 
-  filter(species=="alkanna_sp") %>% 
+  # filter(species=="triticum_turgidum_ssp_dicoccum") %>% 
+  filter(grepl("triticum", species)) %>% 
   ggplot()+
   aes(env_values,nisp)+
   geom_smooth(method = "lm",se = FALSE,col="grey40",linetype="dashed")+
   geom_point(aes(col=chronology))+
   stat_cor(aes(label = paste(..r.label.., ..p.label.., sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
-  scale_color_manual(values = chron_colours) +
-  labs(title="Hordeum sp.", x="Environmental Values", y="Normalised NISP", col="")+
+  # scale_color_manual(values = chron_colours) +
+  labs(title="Triticum", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~env_data,scales = "free")
-
 
 ```
 
