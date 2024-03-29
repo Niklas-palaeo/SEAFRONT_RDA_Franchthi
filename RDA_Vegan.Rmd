@@ -193,8 +193,8 @@ Filtered_Bot <- Bot %>%
 Filtered_D18O_Bot <- D18O %>% 
   filter(trenchunit %in% Bot$trenchunit) %>%
   mutate(
-    Summer_Temp = 16.9-4.38*(min)+0.1*(min)*(min),
-    Winter_Temp = 16.9-4.38*(max)+0.1*(max)*(max),
+    Summer_Temp = max,
+    Winter_Temp = min,
     range=Summer_Temp  - Winter_Temp,
     # Summer_Temp = (min - min(min, na.rm = TRUE)) / (max(min, na.rm = TRUE) - min(min, na.rm = TRUE)),
     # Winter_Temp = (max - min(max, na.rm = TRUE)) / (max(max, na.rm = TRUE) - min(max, na.rm = TRUE)),
