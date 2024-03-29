@@ -134,6 +134,7 @@ Bot <- read.csv(here("data","Botanical_data.csv")) %>%
 ```
 
 ## Filtering Data
+Here we combine the d18O data with the faunal data. We do not use the more detailed climatic data that calculates the seasonal range or variability, because that leads to many NAs, which reduce the already small number of layers for the RDA analysis. This information is added again in the scatterplots though. 
 ### Filtered Fauna
 ```{r}
 Filtered_Fauna <- Fauna %>%
@@ -253,16 +254,18 @@ Corrs_Fauna <- Joined_D18O_Fauna %>%
 
 
 ### Botany Join and Correlation
-### Botany Data wrangle
+#### Botany Data wrangle
 ```{r}
 Joined_D18O_Bot <- cbind(Filtered_D18O_Bot,Filtered_Bot) %>% 
   mutate(trenchunit=rownames(.)) %>% 
-  pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%  
-  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 1:4) %>% 
+   left_join(D18O_WSr,by="trenchunit") %>% #adding the incomplete seasonal data
+  select(trenchunit,range_Summer,range_Winter,se_Summer,se_Winter,everything()) %>%
+  pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%
+  pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
   left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
 ```
 
-### Botany Correlations
+#### Botany Correlations
 ```{r}
 # Split data by species and environmental data to perform correlations. LOTS OF WARNINGS BUT OK
 Corrs_Bot <- Joined_D18O_Bot %>%
