@@ -91,7 +91,9 @@ Fauna <- bind_rows(Fauna_FAN,Fauna_FAS,Fauna_Paralia) %>%
   mutate(across(everything(), ~replace_na(.x, 0))) %>% 
   filter(if_any(where(is.numeric), ~ .x > 0)) %>% #remove empty rows
   arrange(trenchunit) %>% 
-  left_join(Molluscs %>% rename(molluscs=nisp) %>% select(molluscs,trenchunit),by = "trenchunit")
+  left_join(Molluscs %>% rename(molluscs=nisp) %>% select(molluscs,trenchunit),by = "trenchunit") %>% 
+  mutate(caprines=caprines+caprine) %>% 
+  select(-caprine)
 
 rm(Fauna_FAN,Fauna_FAS,Fauna_Paralia,Molluscs)
 ```

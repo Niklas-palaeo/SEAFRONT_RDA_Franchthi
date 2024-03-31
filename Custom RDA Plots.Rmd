@@ -30,7 +30,7 @@ sc_bp <- scores(Data, display="bp", choices=c(1, 2), scaling=1)
 
 # Set up a blank plot with scaling, axes, and labels
 plot(Data,
-     scaling = 1, # set scaling type 
+     scaling = 2, # set scaling type 
      type = "none", # this excludes the plotting of any points from the results
      frame = FALSE,
      # set axis limits
@@ -79,4 +79,179 @@ text(x = sc_bp[,1] * 2.4, # adjust text coordinate to avoid overlap with arrow t
 
 ```
 
+# ggplot
+## FAUNA
+### Showing sites by period
+```{r}
 
+# Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
+
+# scaling = 0: scaling for species scores (species-focused)
+# scaling = 1: scaling for site scores (site-focused)
+# scaling = 2: Hill's scaling (equalize the variance of scores)
+scaling <-  0
+
+# Extract scores
+site_scores <- scores(Data, display="sites", choices=c(1,2), scaling=scaling)
+species_scores <- scores(Data, display="species", choices=c(1,2), scaling=scaling)
+biplot_scores <- scores(Data, display="bp", choices=c(1, 2), scaling=scaling)
+
+
+# Combining and reshaping the data frames using tidyr for a more concise approach
+df_sites <- data.frame(site_scores[, 1:2], Type = "Site", Labels = rownames(site_scores))
+df_species <- data.frame(species_scores[, 1:2], Type = "Species", Labels = rownames(species_scores))
+df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores))
+
+# Use bind_rows from dplyr to combine, since tidyr is more about reshaping
+df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
+  rename(RDA1 = 1, RDA2 = 2) %>% 
+  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
+
+# Plotting
+ggplot() +
+  geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
+             #fill = "#223466ff", 
+             size = 4) +
+    scale_fill_manual(values = chron_colours) + 
+  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
+  geom_text(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=0.2) +
+  geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
+  geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
+  # scale_x_continuous(limits = c(-2, 2)) +
+  # scale_y_continuous(limits = c(-1, 1)) +
+  labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Faunal Remains RDA") +
+  theme_cowplot()
+
+```
+### Showing species related to periods
+```{r}
+
+# Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
+
+# scaling = 0: scaling for species scores (species-focused)
+# scaling = 1: scaling for site scores (site-focused)
+# scaling = 2: Hill's scaling (equalize the variance of scores)
+scaling <-  0
+
+# Extract scores
+site_scores <- scores(Data, display="sites", choices=c(1,2), scaling=scaling)
+species_scores <- scores(Data, display="species", choices=c(1,2), scaling=scaling)
+biplot_scores <- scores(Data, display="bp", choices=c(1, 2), scaling=scaling)
+
+
+# Combining and reshaping the data frames using tidyr for a more concise approach
+df_sites <- data.frame(site_scores[, 1:2], Type = "Site", Labels = rownames(site_scores))
+df_species <- data.frame(species_scores[, 1:2], Type = "Species", Labels = rownames(species_scores))
+df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores))
+
+# Use bind_rows from dplyr to combine, since tidyr is more about reshaping
+df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
+  rename(RDA1 = 1, RDA2 = 2) %>% 
+  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
+
+# Plotting
+ggplot() +
+  geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
+             #fill = "#223466ff", 
+             size = 4,alpha=0.2) +
+    scale_fill_manual(values = chron_colours) + 
+  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=1) +
+  geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
+  geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
+  geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
+  # scale_x_continuous(limits = c(-2, 2)) +
+  # scale_y_continuous(limits = c(-1, 1)) +
+  labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Faunal Remains RDA") +
+  theme_cowplot()
+
+```
+
+## Flora
+### Showing sites by period
+```{r}
+
+# Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
+
+# scaling = 0: scaling for species scores (species-focused)
+# scaling = 1: scaling for site scores (site-focused)
+# scaling = 2: Hill's scaling (equalize the variance of scores)
+scaling <-  0
+
+# Extract scores
+site_scores <- scores(Data, display="sites", choices=c(1,2), scaling=scaling)
+species_scores <- scores(Data, display="species", choices=c(1,2), scaling=scaling)
+biplot_scores <- scores(Data, display="bp", choices=c(1, 2), scaling=scaling)
+
+
+# Combining and reshaping the data frames using tidyr for a more concise approach
+df_sites <- data.frame(site_scores[, 1:2], Type = "Site", Labels = rownames(site_scores))
+df_species <- data.frame(species_scores[, 1:2], Type = "Species", Labels = rownames(species_scores))
+df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores))
+
+# Use bind_rows from dplyr to combine, since tidyr is more about reshaping
+df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
+  rename(RDA1 = 1, RDA2 = 2) %>% 
+  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
+
+# Plotting
+ggplot() +
+  geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
+             #fill = "#223466ff", 
+             size = 4) +
+    scale_fill_manual(values = chron_colours) + 
+  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
+  geom_text(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=0.2) +
+  geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
+  geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
+  # scale_x_continuous(limits = c(-2, 2)) +
+  # scale_y_continuous(limits = c(-1, 1)) +
+  labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Botanical Remains RDA") +
+  theme_cowplot()
+
+```
+### Showing species related to periods
+```{r}
+
+# Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
+
+# scaling = 0: scaling for species scores (species-focused)
+# scaling = 1: scaling for site scores (site-focused)
+# scaling = 2: Hill's scaling (equalize the variance of scores)
+scaling <-  0
+
+# Extract scores
+site_scores <- scores(Data, display="sites", choices=c(1,2), scaling=scaling)
+species_scores <- scores(Data, display="species", choices=c(1,2), scaling=scaling)
+biplot_scores <- scores(Data, display="bp", choices=c(1, 2), scaling=scaling)
+
+
+# Combining and reshaping the data frames using tidyr for a more concise approach
+df_sites <- data.frame(site_scores[, 1:2], Type = "Site", Labels = rownames(site_scores))
+df_species <- data.frame(species_scores[, 1:2], Type = "Species", Labels = rownames(species_scores))
+df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores))
+
+# Use bind_rows from dplyr to combine, since tidyr is more about reshaping
+df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
+  rename(RDA1 = 1, RDA2 = 2) %>% 
+  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
+
+# Plotting
+ggplot() +
+  geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
+             #fill = "#223466ff", 
+             size = 4,alpha=0.2) +
+    scale_fill_manual(values = chron_colours) + 
+  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=1) +
+  geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
+  geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
+  geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
+  # scale_x_continuous(limits = c(-2, 2)) +
+  # scale_y_continuous(limits = c(-1, 1)) +
+  labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Botanical Remains RDA") +
+  theme_cowplot()
+
+```
