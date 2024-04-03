@@ -140,6 +140,34 @@ Joined_D18O_Fauna %>%
   stat_cor(aes(label = paste(after_stat(r.label), after_stat(p.label), sep = "~`,`~")),label.x = 0.1, label.y = 0.9,p.accuracy = 0.001, r.accuracy = 0.01)+ 
     labs(title="Variability within unit", x="Environmental Values", y="Normalised NISP", col="")+
   facet_wrap(~species,scales = "free")
+```
+
+
+#Diversity indices
+```{r}
+########
+# Calculate Shannon diversity
+
+Joined_D18O_Fauna %>% 
+  left_join(tibble(trenchunit = names(diversity(Filtered_Fauna, index = "shannon")), 
+                                   shannon_diversity = diversity(Filtered_Fauna, index = "shannon")),by="trenchunit") %>% 
+left_join(tibble(trenchunit = names(diversity(Filtered_Fauna, index = "simpson")), 
+                                   simpson_diversity = diversity(Filtered_Fauna, index = "simpson")),by="trenchunit") %>% 
+  # select(-species,-nisp) %>% 
+  pivot_longer(cols = c("shannon_diversity","simpson_diversity"),names_to = "diversity_index",values_to = "diversity_values") %>% 
+  unique() %>% 
+  # filter(env_data=="Winter_Temp") %>% 
+  # filter(diversity_index=="simpson_diversity") %>% 
+  ggplot()+
+  aes(nisp,diversity_values, col=chronology)+
+  geom_point()+
+  scale_colour_manual(values = chron_colours) + 
+  facet_wrap(~diversity_index,scales = "free")
+    labs(title="simpson_diversity", x="Environmental Values", y="Diversity values", col="")
+  
+
+
+
 
 ```
 
