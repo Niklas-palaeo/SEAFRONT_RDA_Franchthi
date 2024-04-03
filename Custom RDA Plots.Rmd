@@ -83,7 +83,11 @@ text(x = sc_bp[,1] * 2.4, # adjust text coordinate to avoid overlap with arrow t
 ## FAUNA
 ### Showing sites by period
 ```{r}
+Data <- All_RDA
+# plot.new()
 
+## extract % explained by the first 2 axes
+perc <- round(100*(summary(Data)$cont$importance[2, 1:2]), 2)
 # Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
 
 # scaling = 0: scaling for species scores (species-focused)
@@ -107,26 +111,57 @@ df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
   rename(RDA1 = 1, RDA2 = 2) %>% 
   left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
 
+###### make hull
+site_data <- subset(df_combined, Type == "Site")
+
+# Split data by 'chronology'
+split_data <- split(site_data, site_data$chronology)
+
+# Function to calculate convex hull and return a data frame with the hull points
+calc_hull_df <- function(df) {
+  hull_indices <- chull(df$RDA1, df$RDA2)
+  hull_df <- df[hull_indices, ]
+  return(hull_df)
+}
+
+# Apply the function to each group
+hulls <- lapply(split_data, calc_hull_df)
+
+# Combine the hull data frames, add a row to close the polygon
+hulls_df <- do.call(rbind, lapply(names(hulls), function(name) {
+  rbind(hulls[[name]], hulls[[name]][1, ])
+}))
+####
+
+
+
 # Plotting
 ggplot() +
   geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
-  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
+  # geom_polygon(data = hulls_df %>% na.omit(), aes(x = RDA1, y = RDA2, fill = chronology, group = chronology), alpha = 0.2) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,col=chronology),
              #fill = "#223466ff", 
              size = 4) +
-    scale_fill_manual(values = chron_colours) + 
-  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
-  geom_text(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=0.2) +
+  scale_fill_manual(values = chron_colours) + 
+  scale_colour_manual(values = chron_colours) + 
+  # geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
+  # geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
   geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
   geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
   # scale_x_continuous(limits = c(-2, 2)) +
   # scale_y_continuous(limits = c(-1, 1)) +
   labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Faunal Remains RDA") +
   theme_cowplot()
+ggsave(filename = here("plots","RDA-Fauna-Sites.png"),width=30,height=20,units = "cm")
 
 ```
 ### Showing species related to periods
 ```{r}
+Data <- All_RDA
+# plot.new()
 
+## extract % explained by the first 2 axes
+perc <- round(100*(summary(Data)$cont$importance[2, 1:2]), 2)
 # Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
 
 # scaling = 0: scaling for species scores (species-focused)
@@ -143,35 +178,66 @@ biplot_scores <- scores(Data, display="bp", choices=c(1, 2), scaling=scaling)
 # Combining and reshaping the data frames using tidyr for a more concise approach
 df_sites <- data.frame(site_scores[, 1:2], Type = "Site", Labels = rownames(site_scores))
 df_species <- data.frame(species_scores[, 1:2], Type = "Species", Labels = rownames(species_scores))
-df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores))
+df_biplot <- data.frame(RDA1 = biplot_scores[, 1] * 2, RDA2 = biplot_scores[, 2] * 2, Type = "Biplot", Labels = rownames(biplot_scores)) 
 
 # Use bind_rows from dplyr to combine, since tidyr is more about reshaping
 df_combined <- dplyr::bind_rows(df_sites, df_species) %>%
   rename(RDA1 = 1, RDA2 = 2) %>% 
-  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels")# Ensure the column names are consistent
+  left_join(D18O %>% rename(Labels=trenchunit) %>% select(Labels,chronology),by="Labels") %>% # Ensure the column names are consistent
+   mutate(Labels = case_when(
+    Labels == "fishes_non_tuna" ~ "Fishes not Tuna",
+    Labels == "tuna" ~ "Tuna",
+    Labels == "birds" ~ "Birds",
+    Labels == "small_mammal" ~ "Small Mammal",
+    Labels == "hare" ~ "Hare",
+    Labels == "medium_mammal" ~ "Medium Mammal",
+    Labels == "equid" ~ "Equid",
+    Labels == "cervidae" ~ "Cervidae",
+    Labels == "bos" ~ "Bos",
+    Labels == "sus_scrofa" ~ "Wildboar",
+    Labels == "caprines" ~ "Caprines",
+    Labels == "small_ungulate" ~ "Small Ungulate",
+    Labels == "med_ungulate" ~ "Med Ungulate",
+    Labels == "large_ungulate" ~ "Large Ungulate",
+    Labels == "small_carnivore" ~ "Small Carnivore",
+    Labels == "domestic_dog" ~ "Domestic Dog",
+    Labels == "cattle" ~ "Cattle",
+    Labels == "pig" ~ "Pig",
+    Labels == "molluscs" ~ "Molluscs",
+    TRUE ~ Labels # Default case to keep original values where no change is needed
+  ))
 
 # Plotting
 ggplot() +
   geom_blank(aes(x = RDA1, y = RDA2), data = df_combined) +
-  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,fill=chronology), shape = 21, color = "white", 
-             #fill = "#223466ff", 
-             size = 4,alpha=0.2) +
+   geom_polygon(data = hulls_df %>% na.omit(), aes(x = RDA1, y = RDA2, fill = chronology, group = chronology), alpha = 0.2) +
+  geom_point(data = df_combined[df_combined$Type == "Site", ], aes(x = RDA1, y = RDA2,col=chronology),alpha=0.2,   size = 4) +
     scale_fill_manual(values = chron_colours) + 
-  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=1) +
-  geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
+    scale_colour_manual(values = chron_colours) + 
+  # geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "black", size = 4,alpha=1) +
+  # geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "black", fontface = "bold", size = 3.5,alpha=1) +
   geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
   geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
+annotate("text", x = -0.8, y = 0.6, label = "Initial Neolithic\n(7000-6500 cal BC)",color = "#7D3C98", fontface = "bold", alpha=0.9)+
+annotate("text", x = 0.55, y = 0, label = "Early Neolithic\n(6500-5800 cal BC)",color = "#9B30FF", fontface = "bold", alpha=0.7)+
+annotate("text", x = -0.9, y = 0.2, label = "Middle Neolithic\n(5800-5000 cal BC)",color = "#74C365", fontface = "bold", alpha=0.9)+
   # scale_x_continuous(limits = c(-2, 2)) +
   # scale_y_continuous(limits = c(-1, 1)) +
   labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Faunal Remains RDA") +
   theme_cowplot()
+
+ggsave(filename = here("plots","RDA-Fauna-Periods.png"),width=30,height=20,units = "cm")
 
 ```
 
 ## Flora
 ### Showing sites by period
 ```{r}
+Data <- All_RDA
+# plot.new()
 
+## extract % explained by the first 2 axes
+perc <- round(100*(summary(Data)$cont$importance[2, 1:2]), 2)
 # Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
 
 # scaling = 0: scaling for species scores (species-focused)
@@ -214,7 +280,11 @@ ggplot() +
 ```
 ### Showing species related to periods
 ```{r}
+Data <- All_RDA
+# plot.new()
 
+## extract % explained by the first 2 axes
+perc <- round(100*(summary(Data)$cont$importance[2, 1:2]), 2)
 # Assuming Data is an rda result, sc_si are site scores, sc_sp are species scores, and sc_bp are biplot scores
 
 # scaling = 0: scaling for species scores (species-focused)

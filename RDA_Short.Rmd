@@ -50,6 +50,10 @@ This should give you enough to discuss the impact of climatic variability or tem
 ## Faunal Analysis
 ```{r}
 All_RDA <- rda(Filtered_Fauna,Filtered_D18O_Fauna)
+```
+
+
+```{r}
 All_RDA
 ordiplot(All_RDA,type = "text")
 
