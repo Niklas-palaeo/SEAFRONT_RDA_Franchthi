@@ -490,3 +490,13 @@ Joined_D18O_Bot %>%
 
 
 ```
+
+# Export RDS files
+
+```{r}
+saveRDS(Corrs_Fauna,here("data","pre-formatted dataframes","Corrs_Fauna.rds"))
+saveRDS(Corrs_Fauna,here("data","pre-formatted dataframes","Fauna.rds"))
+saveRDS(Corrs_Fauna,here("data","pre-formatted dataframes","Filtered_D18O_Fauna.rds"))
+saveRDS(Corrs_Fauna,here("data","pre-formatted dataframes","Joined_D18O_Fauna.rds"))
+```
+
