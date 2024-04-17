@@ -96,6 +96,10 @@ Fauna <- bind_rows(Fauna_FAN,Fauna_FAS,Fauna_Paralia) %>%
   select(-caprine)
 
 rm(Fauna_FAN,Fauna_FAS,Fauna_Paralia,Molluscs)
+
+
+saveRDS(Fauna,file = here("data","pre-formatted dataframes","Fauna.rds"))
+
 ```
 
 ## Botanical
@@ -147,6 +151,8 @@ Filtered_Fauna <- Fauna %>%
   column_to_rownames("trenchunit") %>% 
   mutate(across(everything(), ~(.x - min(.x, na.rm = TRUE)) / 
                                   (max(.x, na.rm = TRUE) - min(.x, na.rm = TRUE))))
+
+saveRDS(Filtered_Fauna,file = here("data","pre-formatted dataframes","Filtered_Fauna.rds"))
 
 Filtered_D18O_Fauna <- D18O %>% 
   filter(trenchunit %in% Fauna$trenchunit) %>%
@@ -229,6 +235,8 @@ Joined_D18O_Fauna <- cbind(Filtered_D18O_Fauna,Filtered_Fauna) %>%
   pivot_longer(names_to = "species", values_to = "nisp",cols = 10:last_col()) %>%  
   pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
   left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+
+saveRDS(Joined_D18O_Fauna,file = here("data","pre-formatted dataframes","Joined_D18O_Fauna.rds"))
   
 ```
 
@@ -250,6 +258,9 @@ Corrs_Fauna <- Joined_D18O_Fauna %>%
   mutate(species_env = paste(species, env_data, sep = "_vs_"),
          r.squared = estimate^2) %>%
   select(species_env, estimate, p.value, r.squared) # This makes many warning but it's ok. Lots of NAs are being created, that's why.
+
+saveRDS(Corrs_Fauna,file = here("data","pre-formatted dataframes","Corrs_Fauna.rds"))
+
 
 ```
 
