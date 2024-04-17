@@ -169,7 +169,7 @@ Filtered_D18O_Fauna <- D18O %>%
       filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
   select(-chronology)
 
-
+saveRDS(Filtered_D18O_Fauna,file = here("data","pre-formatted dataframes","Filtered_D18O_Fauna.rds"))
 
 ```
 
