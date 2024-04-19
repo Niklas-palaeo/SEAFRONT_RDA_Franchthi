@@ -258,6 +258,8 @@ ggplot() +
 # Custom Corrplots
 ```{r}
 
+library(corrplot)
+
 corr_matrix_fauna <- cbind(Filtered_D18O_Fauna,Filtered_Fauna)
 
 
@@ -278,7 +280,6 @@ animals <- c(
     "large_ungulate",
     "small_carnivore",
     "domestic_dog",
-    "cattle",
     "pig",
     "molluscs"
   )
@@ -286,7 +287,8 @@ animals <- c(
 climate_params <- c("range", "se", "Winter_Temp", "Summer_Temp")
 
 corrplot(
-  cor(data)[animals, climate_params],
+  cor(corr_matrix_fauna)[animals,climate_params],
+  # cor(corr_matrix_fauna)[5:22,1:4],
   method = "ellipse",
   tl.srt = 45 ,
   tl.col = "black" # Labels color
