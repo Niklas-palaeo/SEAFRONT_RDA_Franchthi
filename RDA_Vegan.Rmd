@@ -136,7 +136,18 @@ Bot <- read.csv(here("data","Botanical_data.csv")) %>%
   filter(any(c_across(where(is.numeric)) != 0)) %>%
   ungroup() %>% 
   left_join(D18O %>% select(trenchunit,chronology),by="trenchunit") %>% 
-  filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN")
+  filter(chronology=="IN"|chronology=="EN"|chronology=="EN-MN"|chronology=="MN"|chronology=="LN"|chronology=="FN") %>% 
+select(-c(culm_nodes_indet_frags, glume_base_indet, 
+            indet_frag, rachis_frag_indet, seed_indet, spikelet_fork_indet_frags,sp_no_1))
+
+
+
+saveRDS(Bot,file = here("data","pre-formatted dataframes","Bot.rds"))
+
+
+
+
+
 ```
 
 ## Filtering Data
@@ -198,6 +209,8 @@ Filtered_Bot <- Bot %>%
   })) %>% 
     select(where(~!all(unique(.) %in% c(0, 1))))  # This selects columns that don't have only 0 and 1 as their unique values
 
+saveRDS(Filtered_Bot,file = here("data","pre-formatted dataframes","Filtered_Bot.rds"))
+
 
 Filtered_D18O_Bot <- D18O %>% 
   filter(trenchunit %in% Bot$trenchunit) %>%
@@ -219,6 +232,8 @@ Filtered_D18O_Bot <- D18O %>%
   filter(trenchunit!="FAN_127") %>%  # that one has only one summer isotope samples
   column_to_rownames("trenchunit") %>% 
   select(-chronology)
+
+saveRDS(Filtered_D18O_Bot,file = here("data","pre-formatted dataframes","Filtered_D18O_Bot.rds"))
 
 
 ```
@@ -276,6 +291,10 @@ Joined_D18O_Bot <- cbind(Filtered_D18O_Bot,Filtered_Bot) %>%
   pivot_longer(names_to = "species", values_to = "nisp",cols = alkanna_sp:vicia_lathyrus_sp) %>%
   pivot_longer(names_to = "env_data", values_to = "env_values",cols = 2:9) %>% 
   left_join(D18O %>% select(chronology,trenchunit),by="trenchunit")
+
+saveRDS(Joined_D18O_Bot,file = here("data","pre-formatted dataframes","Joined_D18O_Bot.rds"))
+
+
 ```
 
 #### Botany Correlations
@@ -296,6 +315,9 @@ Corrs_Bot <- Joined_D18O_Bot %>%
   mutate(species_env = paste(species, env_data, sep = "_vs_"),
          r.squared = estimate^2) %>%
   select(species_env, estimate, p.value, r.squared) 
+
+saveRDS(Corrs_Bot,file = here("data","pre-formatted dataframes","Corrs_Bot.rds"))
+
 
 ```
 

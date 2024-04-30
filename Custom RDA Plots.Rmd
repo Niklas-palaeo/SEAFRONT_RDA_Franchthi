@@ -72,14 +72,15 @@ ggplot() +
              size = 4) +
   scale_fill_manual(values = chron_colours) + 
   scale_colour_manual(values = chron_colours) + 
-  # geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
-  # geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
+  geom_point(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2), shape = 22, color = "black", fill = "#fdb21aff", size = 4,alpha=0.2) +
+  geom_text(data = df_combined[df_combined$Type == "Species", ], aes(x = RDA1, y = RDA2, label = Labels), hjust = 1.1, vjust = 1.1, color = "grey40", fontface = "bold", size = 3.5,alpha=1) +
   geom_segment(data = df_biplot, aes(x = 0, y = 0, xend = RDA1, yend = RDA2), arrow = arrow(type = "closed"), color = "#e84148ff", linewidth = 1) +
   geom_text(data = df_biplot, aes(x = RDA1, y = RDA2, label = rownames(df_biplot)), color = "#e84148ff", size = 6, fontface = "bold", hjust = 0.1, vjust = 1.91) +
   # scale_x_continuous(limits = c(-2, 2)) +
   # scale_y_continuous(limits = c(-1, 1)) +
   labs(x = paste0("RDA1 (", perc[1], "%)"), y = paste0("RDA2 (", perc[2], "%)"), title = "Faunal Remains RDA") +
   theme_cowplot()
+
 ggsave(filename = here("plots","RDA-Fauna-Sites.png"),width=30,height=20,units = "cm")
 
 ```
